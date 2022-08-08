@@ -1,0 +1,26 @@
+.padding-0 {
+    padding-right: 0;
+    padding-left: 0;
+  
+}
+
+body {
+    background-color: #76a5af;
+}
+
+.twitter {
+    width: 1880px;
+    border: 4px solid black;
+    margin-left: -4px;
+    margin-right: -200px;
+    margin-top: -10px;
+    margin-bottom:-10px;
+}
+
+.onestlabis {
+    background-color: #45818e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 1875px;
+}
+
