@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>InternView</title>
+	<title>Mindshop</title>
 	<link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./assets/vendors/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="./nav&footer.css" class="css">
