@@ -1,4 +1,6 @@
 
+
+
    <!-- Footer -->
 <footer class="bg-light text-center text-lg-start">
     <div class="container-fluid header"  style="background-color: #000000;">
@@ -13,10 +15,10 @@
                         <a href="#!" style="color: #a2c4c9; "class="link">Nous contacter</a>
                     </li>
                     <li>
-                        <a href="Inscription.html" style="color: #a2c4c9; " class="link">S'inscrire </a>
+                        <a href="Inscription.php" style="color: #a2c4c9; " class="link">S'inscrire </a>
                     </li>
                      <li>
-                        <a href="Connexion.html" style="color: #a2c4c9; "class="link">Connexion </a>
+                        <a href="Connexion.php" style="color: #a2c4c9; "class="link">Connexion </a>
                     </li>
                      <li>
                         <a href="#!" style="color: #a2c4c9; " class="link">Support</a>
@@ -79,7 +81,7 @@
     </div>
     <!-- Copyright -->
     <div class="text-center p-3 copyright" style="background-color: #000000;">
-        <pre> <font color="#a2c4c9"> © 2022    à propos   Accessibilité   <a href="CGU.php"  style="color: #a2c4c9; " class="link">Conditions générales d'utilisation de Mindhsop</a>    Politique de confidentialité    Politique relative aux cookies   Politique de copyright </font> </pre>
+        <pre> <font color="#a2c4c9"> @ 2022    a propos   Accessibilite   <a href="CGU.php"  style="color: #a2c4c9; " class="link">Conditions generales d'utilisation de Mindhsop</a>    Politique de confidentialite    Politique relative aux cookies   Politique de copyright </font> </pre>
     </div>
     <!-- Copyright -->
 </footer>
