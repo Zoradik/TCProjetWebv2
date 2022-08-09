@@ -21,7 +21,7 @@
         <!-- Barre de navigation -->
         <nav>
             <div class="container-fluid header">
-                <div class="row">
+                <div class="row"  style="background-color: #000000;">
                     <div class="col-lg-2 barnav">
                         <img class="logo" src="Logo/LogoMindShop.png" alt="LOGO">
                     </div>
@@ -29,22 +29,21 @@
                     </div>
                     <div class="col-lg-4 barnav">
                         <div align="right">
-                            <input class="style-button" type="button" value="Acceuil" onclick="window.location.href='Acceuil.html';">
-                            <input class="style-button" type="button" value="Listes de Produit" onclick="window.location.href='ListesdeProduit.html';">
-                            <input class="style-button" type="button" value="Listes de Courses" onclick="window.location.href='ListesdeCourses.html';">
-                            <input class="style-button" type="button" value="Entreprises" onclick="window.location.href='Entreprises.html';">
+                            <input class="style-button" type="button" value="Acceuil" onclick="window.location.href='Acceuil.php';">
+                            <input class="style-button" type="button" value="Listes de Produit" onclick="window.location.href='ListesdeProduit.php';">
+                            <input class="style-button" type="button" value="Listes de Courses" onclick="window.location.href='ListesdeCourses.php';">
                             </div>
                         </div>
                     <div class="col-lg-1 barnav">
                         <div align="right">
-                            <i class="fas fa-heart navicon " onclick="window.location.href='Wishlist.html';"></i>
+                            <i class="fas fa-heart navicon " style="color: #a2c4c9; " onclick="window.location.href='Wishlist.php';"></i>
                             </div>
                         </div>
 
                     <div class="col-lg-1 barnav">
                         <div align="right">
                             <li>
-                                <a href="profil.html" class="link">Nom Prénom</a>
+                                <a href="profil.php" style="color: #a2c4c9; " class="link">Nom Prénom</a>
                             </li>
                         </div>
 
@@ -127,19 +126,19 @@
             <div class="col-md-2">
                 <ul class="list-unstyled mb-0">
                     <li>
-                        <a href="#!" class="link">A propos de nous</a>
+                        <a href="#!" style="color: #a2c4c9; " class="link">A propos de nous</a>
                     </li>
                     <li>
-                        <a href="#!" class="link">Nous contacter</a>
+                        <a href="#!" style="color: #a2c4c9; "class="link">Nous contacter</a>
                     </li>
                     <li>
-                        <a href="Inscription.html" class="link">S'inscrire </a>
+                        <a href="Inscription.html" style="color: #a2c4c9; " class="link">S'inscrire </a>
                     </li>
                      <li>
-                        <a href="Connexion.html" class="link">Connexion </a>
+                        <a href="Connexion.html" style="color: #a2c4c9; "class="link">Connexion </a>
                     </li>
                      <li>
-                        <a href="#!" class="link">Support</a>
+                        <a href="#!" style="color: #a2c4c9; " class="link">Support</a>
                     </li>
                 </ul>
             </div>
@@ -199,7 +198,7 @@
     </div>
     <!-- Copyright -->
     <div class="text-center p-3 copyright" style="background-color: #000000;">
-        <pre>� 2022    � propos   Accessibilit�   <a href="CGU.php" class="link">Conditions g�n�rales d�utilisation de Mindhsop</a>    Politique de confidentialit�    Politique relative aux cookies   Politique de copyright</pre>
+        <pre> <font color="#a2c4c9"> © 2022    à propos   Accessibilité   <a href="CGU.php"  style="color: #a2c4c9; " class="link">Conditions générales d'utilisation de Mindhsop</a>    Politique de confidentialité    Politique relative aux cookies   Politique de copyright </font> </pre>
     </div>
     <!-- Copyright -->
 </footer>
