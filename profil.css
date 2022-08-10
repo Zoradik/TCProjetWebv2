@@ -1,0 +1,87 @@
+.bg {
+    background-color: #f8634a;
+    width: 40%;
+    margin-left: auto;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: darkolivegreen;
+    border-color: black;
+    margin: 1%;
+}
+
+
+.card-body {
+    background-color: #45818e;
+    margin: 1px;
+    float: left;
+}
+
+.test {
+    margin: 10px;
+}
+
+.form1 {
+    border: solid 3px black;
+    border-radius: 10px;
+    padding: 2%;
+    background-color: #F8634A;
+}
+
+.section {
+    margin: 2%;
+}
+
+.text {
+    text-align: left;
+}
+
+body {
+    background-color: #76a5af;
+}
+
+.testos {
+    background-color: #f8634a;
+}
+
+/* upper right enfet */
+
+
+.img-account-profile {
+    height: 10rem;
+}
+
+.mm {
+    font-weight: 900;
+}
+
+.card .card-header {
+    font-weight: 600;
+}
+
+.card-header {
+    padding: 1rem;
+    background-color: #e4e4e4;
+}
+
+/* upper right enfet */
+.fam {
+    margin: 5%;
+}
+
+
+.profil {
+    border-radius: 3%;
+    background-color: white;
+}
+
+
+iframe {
+    width: 430px;
+    height: 600px;
+    margin-left: 2vh;
+    margin-bottom: 2vh;
+    background: #000000;
+    border: solid 1px crimson;
+}

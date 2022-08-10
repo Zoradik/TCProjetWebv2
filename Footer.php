@@ -81,7 +81,7 @@
     </div>
     <!-- Copyright -->
     <div class="text-center p-3 copyright" style="background-color: #000000;">
-        <pre> <font color="#a2c4c9"> @ 2022    a propos   Accessibilite   <a href="CGU.php"  style="color: #a2c4c9; " class="link">Conditions generales d'utilisation de Mindhsop</a>    Politique de confidentialite    Politique relative aux cookies   Politique de copyright </font> </pre>
+        <pre> <font color="#a2c4c9"> @ 2022    a propos   Accessibilit&eacute   <a href="CGU.php"  style="color: #a2c4c9; " class="link">Conditions g&eacuten&eacuterales d'utilisation de Mindhsop</a>    Politique de confidentialit&eacute    Politique relative aux cookies   Politique de copyright </font> </pre>
     </div>
     <!-- Copyright -->
 </footer>

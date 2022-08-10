@@ -41,10 +41,10 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <label for="validationCustom02">Prénom</label>
-                                    <input type="text" name="prenom" class="form-control" id="validationCustom02" placeholder="Prénom" required>
+                                    <label for="validationCustom02">Pr&eacutenom</label>
+                                    <input type="text" name="prenom" class="form-control" id="validationCustom02" placeholder="Prenom" required>
                                     <div class="invalid-feedback">
-                                        Merci d'indiquer votre prénom.
+                                        Merci d'indiquer votre prenom.
                                     </div>
                                 </div>
                             
@@ -107,7 +107,7 @@
 
 
                             
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                        <button class="btn btn-primary" type="submit">S'inscrire</button>
                     </form>
             </fieldset>
             </div>

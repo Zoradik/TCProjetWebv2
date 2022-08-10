@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\assets",
-    "\\assets\\vendors"
+    "\\assets\\vendors\\fontawesome\\js"
   ],
-  "SelectedNode": "\\ListesdeProduit.php",
+  "SelectedNode": "\\Connexion.css",
   "PreviewInSolutionExplorer": false
 }
