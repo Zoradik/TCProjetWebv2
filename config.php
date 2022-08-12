@@ -10,7 +10,7 @@
 
     try 
     {
-        $bdd = new PDO("mysql:host=localhost;dbname=tcwebjérémy;charset=utf8", "root", "");
+        $bdd = new PDO("mysql:host=localhost;dbname=tcweb;charset=utf8", "root", "");
 
    
     }
