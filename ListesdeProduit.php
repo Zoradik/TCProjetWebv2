@@ -5,8 +5,8 @@
     <title>MindShop</title>
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/vendors/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="./nav&footer.css" class="css">
-    <link rel="stylesheet" href="./ListesdeProduit.css" class="css">
+    <link rel="stylesheet" href="./assets/nav&footer.css" class="css">
+    <link rel="stylesheet" href="./assets/ListesdeProduit.css" class="css">
     <!-- <meta name="viewport"
            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
