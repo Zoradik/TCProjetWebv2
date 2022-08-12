@@ -89,8 +89,8 @@
 
     <?php include('footer.php'); ?>
     
-<script src="./assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-<script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="./assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
 </body>
 </html>
 
