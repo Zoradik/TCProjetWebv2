@@ -1,3 +1,9 @@
+<?php 
+    // on va chercher les articles dans la base
+    // on se connecte a la base
+    require_once 'config.php';
+    ?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -12,8 +18,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./Connexion.css" class="css">
-    <link rel="stylesheet" href="./nav&footer.css" class="css">
+    <link rel="stylesheet" href="./assets/Connexion.css" class="css">
+    <link rel="stylesheet" href="./assets/nav&footer.css" class="css">
 
 </head>
 <body>
