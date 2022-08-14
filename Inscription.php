@@ -1,9 +1,3 @@
-<?php 
-    // on va chercher les articles dans la base
-    // on se connecte a la base
-    require_once 'config.php';
-    ?>
-
 
 <!doctype html>
 <html lang="fr">
@@ -24,7 +18,55 @@
 <?php include('nav.php'); ?>
 <div class="login-form">
    
+    <?php 
+                if(isset($_GET['reg_err']))
+                {
+                    $err = htmlspecialchars($_GET['reg_err']);
 
+                    switch($err)
+                    {
+                        case 'success':
+                        ?>
+                            <div class="alert alert-success">
+                                <strong>Succès</strong> inscription réussie !
+                            </div>
+                        <?php
+                        break;
+
+                        case 'password':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> mot de passe différent
+                            </div>
+                        <?php
+                        break;
+
+                        case 'email':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> email non valide
+                            </div>
+                        <?php
+                        break;
+
+                        case 'email_length':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> email trop long
+                            </div>
+                        <?php 
+                        break;
+
+                        case 'already':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> compte deja existant
+                            </div>
+                        <?php 
+
+                    }
+                }
+    ?>
 
     <div class="container-fluid ">
 
@@ -127,7 +169,9 @@
 
 
 <?php include('footer.php'); ?>
-
-
+<!-- onchange="myFunction()" 
+value="executionDeScript"
+value=""-->
+<script src="./assets/inscription.js"></script>
 </body>
 </html>
