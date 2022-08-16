@@ -15,7 +15,7 @@
                         <a href="#!" style="color: #a2c4c9; "class="link">Nous contacter</a>
                     </li>
                     <li>
-                        <a href="Inscription.php" style="color: #a2c4c9; " class="link">S'inscrire </a>
+                        <a href="inscription.php" style="color: #a2c4c9; " class="link">S'inscrire </a>
                     </li>
                      <li>
                         <a href="Connexion.php" style="color: #a2c4c9; "class="link">Connexion </a>
