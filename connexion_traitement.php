@@ -1,6 +1,6 @@
 <?php 
     session_start(); // D�marrage de la session
-    require_once 'config.php'; // On inclut la connexion � la base de donn�es
+    require_once 'config.php'; // On inclut la connexion à la base de données
 
     if(isset($_POST['email'])  && isset($_POST['password'])) // Si il existe les champs email, password et qu'il sont pas vident
     {
@@ -9,7 +9,7 @@
         $password = htmlspecialchars($_POST['password']);
 
         
-        $email = strtolower($email); // email transform� en minuscule
+        $email = strtolower($email); // email transformé en minuscule
         
 
 
@@ -42,7 +42,7 @@
                 
 
                 $id_user = $data['ID_utilisateurs'];
-                $profil_user = $data['ID_utilisateurs'];
+               // $profil_user = $data['ID_utilisateurs'];
                 $prenom = $data['Prenom'];
                 $nom = $data['Nom'];
                 $email = $data['email'];
@@ -50,22 +50,23 @@
                 $role = $data['Role'];
 
                 $hash=$data['Mot_de_passe'];
-                if(password_verify($password,$hash ))
-                {
-                    //$_SESSION['user'] = $profil_user;
-                    $cookieFin = time()+60*60*24;
-                    setcookie("id_user", $id_user, $cookieFin);
-                    setcookie("user", $profil_user, $cookieFin);
-                    setcookie("prenom", $prenom, $cookieFin);
-                    setcookie("nom", $nom, $cookieFin);
-                    setcookie("email", $email, $cookieFin);
-                    setcookie("ville", $ville, $cookieFin);
-                    setcookie("Role", $role, $cookieFin);
+                echo $hash;
+                // if(password_verify($password,$hash ))
+                // {
+                //     //$_SESSION['user'] = $profil_user;
+                //     $cookieFin = time()+60*60*24;
+                //     setcookie("id_user", $id_user, $cookieFin);
+                //     //setcookie("user", $profil_user, $cookieFin);
+                //     setcookie("prenom", $prenom, $cookieFin);
+                //     setcookie("nom", $nom, $cookieFin);
+                //     setcookie("email", $email, $cookieFin);
+                //     setcookie("ville", $ville, $cookieFin);
+                //     setcookie("Role", $role, $cookieFin);
                     
 
-                    header('Location:Accueil.php');
+                //     header('Location:Accueil.php');
       
-                }else header('Location: connexion.php?login_err=password');
+                // }else header('Location: connexion.php?login_err=password');
             }else header('Location: connexion.php?login_err=email');
         }else header('Location: connexion.php?login_err=already');
     }else header('Location: connexion.php');
