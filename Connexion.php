@@ -1,9 +1,3 @@
-<?php 
-    // on va chercher les articles dans la base
-    // on se connecte a la base
-    require_once 'config.php';
-    ?>
-
 <!doctype html>
 <html lang="fr">
 <head>
