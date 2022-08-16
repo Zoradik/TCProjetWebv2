@@ -50,23 +50,23 @@
                 $role = $data['Role'];
 
                 $hash=$data['Mot_de_passe'];
-                echo $hash;
-                // if(password_verify($password,$hash ))
-                // {
-                //     //$_SESSION['user'] = $profil_user;
-                //     $cookieFin = time()+60*60*24;
-                //     setcookie("id_user", $id_user, $cookieFin);
-                //     //setcookie("user", $profil_user, $cookieFin);
-                //     setcookie("prenom", $prenom, $cookieFin);
-                //     setcookie("nom", $nom, $cookieFin);
-                //     setcookie("email", $email, $cookieFin);
-                //     setcookie("ville", $ville, $cookieFin);
-                //     setcookie("Role", $role, $cookieFin);
+                
+                if(password_verify($password,$hash ))
+                {
+                    //$_SESSION['user'] = $profil_user;
+                    $cookieFin = time()+60*60*24;
+                    setcookie("id_user", $id_user, $cookieFin);
+                    //setcookie("user", $profil_user, $cookieFin);
+                    setcookie("prenom", $prenom, $cookieFin);
+                    setcookie("nom", $nom, $cookieFin);
+                    setcookie("email", $email, $cookieFin);
+                    setcookie("ville", $ville, $cookieFin);
+                    setcookie("Role", $role, $cookieFin);
                     
 
-                //     header('Location:Accueil.php');
+                    header('Location:Accueil.php');
       
-                // }else header('Location: connexion.php?login_err=password');
-            }else header('Location: connexion.php?login_err=email');
-        }else header('Location: connexion.php?login_err=already');
-    }else header('Location: connexion.php');
+                }else header('Location: Connexion.php?login_err=password');
+            }else header('Location: Connexion.php?login_err=email');
+        }else header('Location: Connexion.php?login_err=already');
+    }else header('Location: Connexion.php');
