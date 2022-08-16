@@ -100,7 +100,7 @@
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom04">Identifiant</label>
-                                <input type="text" name="email" class="form-control" id="validationCustom04" placeholder="Identifiant" required>
+                                <input type="text" name="ID_user" class="form-control" id="validationCustom04" placeholder="Identifiant" required>
                                 <div class="invalid-feedback">
                                     Merci d'indiquer votre Identifiant.
                                 </div>
@@ -117,7 +117,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="validationCustom11">Ville</label>
-                                <select id="choixCategorie" name="role" class="form-select"  id="validationCustom11" required>
+                                <select id="choixCategorie" name="ville" class="form-select"  id="validationCustom11" required>
                                 <option selected disabled value="">Selectionner...</option>
                                 <option value="Pilote">Pilote</option>
                                 <option value="Etudiant">Etudiant</option>
@@ -172,6 +172,6 @@
 <!-- onchange="myFunction()" 
 value="executionDeScript"
 value=""-->
-<script src="./assets/inscription.js"></script>
+<!-- <script src="./assets/inscription.js"></script> -->
 </body>
 </html>
