@@ -28,7 +28,7 @@
                         case 'success':
                         ?>
                             <div class="alert alert-success">
-                                <strong>Succès</strong> inscription réussie !
+                                <strong>Succï¿½s</strong> inscription rï¿½ussie !
                             </div>
                         <?php
                         break;
@@ -36,7 +36,7 @@
                         case 'password':
                         ?>
                             <div class="alert alert-danger">
-                                <strong>Erreur</strong> mot de passe différent
+                                <strong>Erreur</strong> mot de passe diffï¿½rent
                             </div>
                         <?php
                         break;
@@ -121,10 +121,10 @@
                                 <option selected disabled value="">Selectionner...</option>
                                 <option value="Pilote">Pilote</option>
                                 <option value="Etudiant">Etudiant</option>
-                                <option value="Délégué">Délégué</option>
+                                <option value="Dï¿½lï¿½guï¿½">Dï¿½lï¿½guï¿½</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Merci d'indiquer votre Rôle.
+                                    Merci d'indiquer votre Rï¿½le.
                                 </div>  
                             </div> 
                             
