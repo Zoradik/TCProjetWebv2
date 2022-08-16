@@ -14,7 +14,7 @@
         $email = htmlspecialchars($_POST['email']);
         $ville = htmlspecialchars($_POST['ville']);
         //$role = htmlspecialchars($_POST['role']);
-
+        $role = htmlspecialchars('oui');
         $password = htmlspecialchars($_POST['password']);
         $password_retype = htmlspecialchars($_POST['password_retype']);
 
@@ -34,8 +34,8 @@
          
 
       // On vérifie si l'utilisateur existe
-       $check = $bdd->prepare('SELECT `Nom`, `Prenom`, `ID_utilisateurs`, `email`, `Ville`, `Mot de passe`, `Role` FROM `utilisateurs` = ?');
-       $check->execute(array($email));
+       $check = $bdd->prepare('SELECT Nom, Prenom, ID_utilisateurs, email, Ville, Mot_de_passe, Role FROM utilisateurs WHERE ID_utilisateur =  ?');
+       $check->execute(array($ID_user));
        $data = $check->fetch();
        $row = $check->rowCount();
 
@@ -54,17 +54,17 @@
 
 
 
-                            $insert_user = $bdd->prepare('INSERT INTO `utilisateurs` (`Nom`, `Prenom`, `ID_utilisateurs`, `email`, `Ville`, `Mot de passe`, `Role`) VALUES (`:nom`, `:prenom`, `:ID_user`, `:email`, `:ville`, `:password`, `ADM`)');
-                           var_dump($insert_user);
-                           echo"Nom";
+                            $insert_user = $bdd->prepare('INSERT INTO utilisateurs (Nom, Prenom, ID_utilisateurs, email, Ville, Mot_de_passe, Role) VALUES (:nom, :prenom, :ID_user, :email, :ville,  :passwords, :ADM)');
+                           // var_dump($insert_user);
+                           // echo"Nom";
                             $insert_user->execute(array(
                                 'nom' => $nom,
                                 'prenom' => $prenom,   
                                 'ID_user' => $ID_user,
                                 'email' => $email,
                                 'ville' => $ville,
-                                'password' => $password,
-                                'ADM' => "oui",
+                                'passwords' => $password,
+                                'ADM' => $role,
                             ));
                             
 
