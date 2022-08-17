@@ -1,9 +1,3 @@
-<?php 
-    // on va chercher les articles dans la base
-    // on se connecte a la base
-    require_once 'config.php';
-    ?>
-
 
 <!doctype html>
 <html lang="fr">
@@ -24,7 +18,55 @@
 <?php include('nav.php'); ?>
 <div class="login-form">
    
+    <?php 
+                if(isset($_GET['reg_err']))
+                {
+                    $err = htmlspecialchars($_GET['reg_err']);
 
+                    switch($err)
+                    {
+                        case 'success':
+                        ?>
+                            <div class="alert alert-success">
+                                <strong>Succï¿½s</strong> inscription rï¿½ussie !
+                            </div>
+                        <?php
+                        break;
+
+                        case 'password':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> mot de passe diffï¿½rent
+                            </div>
+                        <?php
+                        break;
+
+                        case 'email':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> email non valide
+                            </div>
+                        <?php
+                        break;
+
+                        case 'email_length':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> email trop long
+                            </div>
+                        <?php 
+                        break;
+
+                        case 'already':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> compte deja existant
+                            </div>
+                        <?php 
+
+                    }
+                }
+    ?>
 
     <div class="container-fluid ">
 
@@ -58,7 +100,7 @@
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom04">Identifiant</label>
-                                <input type="text" name="email" class="form-control" id="validationCustom04" placeholder="Identifiant" required>
+                                <input type="text" name="ID_user" class="form-control" id="validationCustom04" placeholder="Identifiant" required>
                                 <div class="invalid-feedback">
                                     Merci d'indiquer votre Identifiant.
                                 </div>
@@ -75,14 +117,14 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="validationCustom11">Ville</label>
-                                <select id="choixCategorie" name="role" class="form-select"  id="validationCustom11" required>
+                                <select id="choixCategorie" name="ville" class="form-select"  id="validationCustom11" required>
                                 <option selected disabled value="">Selectionner...</option>
                                 <option value="Pilote">Pilote</option>
                                 <option value="Etudiant">Etudiant</option>
-                                <option value="Délégué">Délégué</option>
+                                <option value="Dï¿½lï¿½guï¿½">Dï¿½lï¿½guï¿½</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Merci d'indiquer votre Rôle.
+                                    Merci d'indiquer votre Rï¿½le.
                                 </div>  
                             </div> 
                             
@@ -127,7 +169,9 @@
 
 
 <?php include('footer.php'); ?>
-
-
+<!-- onchange="myFunction()" 
+value="executionDeScript"
+value=""-->
+<!-- <script src="./assets/inscription.js"></script> -->
 </body>
 </html>
