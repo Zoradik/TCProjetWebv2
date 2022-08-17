@@ -9,14 +9,9 @@
                     </div>
                     <div class="col-lg-4 barnav">
                         <div align="right">
-                            <input class="style-button" type="button" value="Acceuil" onclick="window.location.href='Acceuil.php';">
+                            <input class="style-button" type="button" value="Accueil" onclick="window.location.href='Accueil.php';">
                             <input class="style-button" type="button" value="Listes de Produit" onclick="window.location.href='ListesdeProduit.php';">
                             <input class="style-button" type="button" value="Listes de Courses" onclick="window.location.href='ListesdeCourses.php';">
-                            </div>
-                        </div>
-                    <div class="col-lg-1 barnav">
-                        <div align="right">
-                            <i class="fas fa-heart navicon " style="color: #a2c4c9; " onclick="window.location.href='Wishlist.php';"></i>
                             </div>
                         </div>
 
