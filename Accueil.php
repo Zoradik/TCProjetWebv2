@@ -1,10 +1,11 @@
-<?php 
-    // on va chercher les articles dans la base
-    // on se connecte a la base
-    require_once 'config.php';
-    ?>
+<?php
+// on va chercher les articles dans la base
+// on se connecte a la base
+require_once 'config.php';
+?>
 <!doctype html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <title>MindShop</title>
@@ -24,62 +25,63 @@
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
 
 
-    
-        
+
+
 </head>
 
 <?php include('nav.php'); ?>
+
 <body>
-    
-
-
-  
 
 
 
-        <!-- Listes des produits en vogue -->
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-6">
-                    <br>
-                    <div class="row">
-                            <div class=".col-xl-">
-                                <div class="onestlabis">
-                                    <div class="twitter">
-                                        <br />
 
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                          
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <br />
 
-                                    </div>
-                                </div>
+
+    <!-- Listes des produits en vogue -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <br>
+                <div class="row">
+                    <div class=".col-xl-">
+                        <div class="onestlabis">
+                            <div class="twitter">
+                                <br />
+
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+
                             </div>
+                        </div>
                     </div>
-
-
-
                 </div>
-                
+
+
+
             </div>
+
         </div>
+    </div>
     </div>
 
     <br>
@@ -87,8 +89,9 @@
 
 
 
-  <?php include('footer.php'); ?>
-    
+    <?php include('footer.php'); ?>
+
 
 </body>
-</html>	
+
+</html>

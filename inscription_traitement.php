@@ -1,5 +1,5 @@
 <?php 
-    require_once 'config.php'; // On inclu la connexion � la bdd
+    require_once 'config.php'; // On inclu la connexion à la bdd
     
     // Si les variables existent et qu'elles ne sont pas vides
     if(isset($_POST['email']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['ville']) && isset($_POST['ID_user'])  && isset($_POST['password']) && isset($_POST['password_retype']))
@@ -78,3 +78,4 @@
                }else header('Location: inscription.php?reg_err=email_length');
        }else header('Location: inscription.php?reg_err=already');
  }
+ ?>
