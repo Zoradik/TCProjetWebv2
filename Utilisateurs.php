@@ -8,7 +8,7 @@ use App\URLHelper;
 
 
 
-define("PER_PAGE", 8);
+define("PER_PAGE", 6);
 
 
 // on va chercher les articles dans la base
@@ -118,17 +118,17 @@ $pages = ceil($count / PER_PAGE); //ceil toujours valeur supérieur a la virgule
                                         <input type="text" class="form-control" name="q" placeholder="Rechercher par email" value="<?= htmlentities($_GET['q'] ?? null) //htmlentities pour echapper aux injections
                                                                                                                                     ?>">
                                     </div>
-                                    <button class="btn btn-primary">Rechercher</button>
+                                    <button class="btn btn-dark">Rechercher</button>
                                 </form>
                                 <table class="table table-strip">
                                     <thead>
                                         <tr>
                                             <th><?= TableHelper::sort('ID_utilisateurs', 'ID_utilisateurs', $_GET) ?></th>
-                                            <th>><?= TableHelper::sort('Nom', 'Nom', $_GET) ?></th>
-                                            <th>><?= TableHelper::sort('Prenom', 'Prenom', $_GET) ?></th>
-                                            <th>><?= TableHelper::sort('email', 'email', $_GET) ?></th>
-                                            <th>><?= TableHelper::sort('ville', 'ville', $_GET) ?></th>
-                                            <th>><?= TableHelper::sort('Role', 'Role', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('Nom', 'Nom', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('Prenom', 'Prenom', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('email', 'email', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('ville', 'ville', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('Role', 'Role', $_GET) ?></th>
                                             <th>>Action</th>
                                         </tr>
                                     </thead>
@@ -143,16 +143,17 @@ $pages = ceil($count / PER_PAGE); //ceil toujours valeur supérieur a la virgule
                                                 <td><?= $tab[$i]['email'] ?></td>
                                                 <td><?= $tab[$i]['Ville'] ?></td>
                                                 <td><?= $tab[$i]['Role'] ?> </td>
-                                                <td>action </td>
+                                                <td><a href='/delete.php?Utilisateurs_ID=<?= $tab[$i]['ID_utilisateurs'] ?>'>
+                                                        <button class="btn btn-dark" type="button">Supprimer</button> </td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
                                 </table>
                                 <?php if ($pages > 1 && $page > 1) : ?>
-                                    <a href="?<?= URLHelper::withParam($_GET, "p", $page - 1) ?>" class="btn btn-primary"> Page précedente </a>
+                                    <a href="?<?= URLHelper::withParam($_GET, "p", $page - 1) ?>" class="btn btn-dark"> Page précedente </a>
                                 <?php endif ?>
                                 <?php if ($pages > 1 && $page < $pages) : ?>
-                                    <a href="?<?= URLHelper::withParam($_GET, "p", $page + 1) ?>" class="btn btn-primary"> Page Suivante </a>
+                                    <a href="?<?= URLHelper::withParam($_GET, "p", $page + 1) ?>" class="btn btn-dark"> Page Suivante </a>
                                 <?php endif ?>
                             </div>
                         </div>
