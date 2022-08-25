@@ -10,6 +10,7 @@ require 'Nav.php'
 <link rel="stylesheet" href="./assets/Acceuil.css" class="css">
 
 <div class="container">
+
     <ul>
         <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom0'] ?></a></li>
         <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom1'] ?></a></li>
