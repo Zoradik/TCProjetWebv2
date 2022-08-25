@@ -50,7 +50,7 @@
 
                            $password = password_hash($password, PASSWORD_DEFAULT);
 
-                          //  On ins�re dans la base de données
+                          //  On insère dans la base de données
 
 
 
