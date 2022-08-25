@@ -62,7 +62,7 @@
                     setcookie("nom", $nom, $cookieFin);
                     setcookie("email", $email, $cookieFin);
                     setcookie("ville", $ville, $cookieFin);
-                    // setcookie("Role", $role, $cookieFin);
+                    setcookie("Role", $role, $cookieFin);
                     
 
                     header('Location:Accueil.php');

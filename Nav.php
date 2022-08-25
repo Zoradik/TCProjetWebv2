@@ -4,13 +4,13 @@ $role = null;
 
 if (!empty($_COOKIE['id_user'])) {
     $ID = $_COOKIE['id_user'];
-    $role = $_COOKIE['id_user'];
+    $role = $_COOKIE['Role'];
 }
 
 if (!empty($_POST['id_user'])) {
     setcookie('id_user', $_POST['id_user']);
     $ID = $_POST['id_user'];
-    $role = $_COOKIE['id_user'];
+    $role = $_POST['Role'];
 }
 ?>
 
@@ -26,7 +26,7 @@ if (!empty($_POST['id_user'])) {
             </div>
             <div class="col-lg-4 barnav">
                 <div align="right">
-                        <?php if ($role !== 'ADM') : ?>
+                        <?php if ($role == 'ADM') : ?>
                         <input class="style-button" type="button" value="Utilisateurs" onclick="window.location.href='Utilisateurs.php';">
                         
                     <?php endif; ?>

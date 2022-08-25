@@ -12,7 +12,7 @@ if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     setcookie('id_user', '', time() - 10 );
     setcookie('email', '', time() - 10 );
     setcookie('ville', '', time() - 10 );
-    setcookie('Role', '', time() - 10 );
+    setcookie('role', '', time() - 10 );
     setcookie('PHPSESSID', '', time() - 10 );
 }
 
