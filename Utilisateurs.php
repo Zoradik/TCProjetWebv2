@@ -143,7 +143,7 @@ $pages = ceil($count / PER_PAGE); //ceil toujours valeur supérieur a la virgule
                                                 <td><?= $tab[$i]['email'] ?></td>
                                                 <td><?= $tab[$i]['Ville'] ?></td>
                                                 <td><?= $tab[$i]['Role'] ?> </td>
-                                                <td><a href='/update.php'>
+                                                <td><a href='/update.php?Utilisateurs_ID=<?= $tab[$i]['ID_utilisateurs'] ?>'>
                                                         <button class="btn btn-dark" type="button">Update</button> </td>
                                                 <td><a href='/delete.php?Utilisateurs_ID=<?= $tab[$i]['ID_utilisateurs'] ?>'>
                                                         <button class="btn btn-dark" type="button">Supprimer</button> </td>

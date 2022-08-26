@@ -34,7 +34,7 @@
          
 
       // On vérifie si l'utilisateur existe
-       $check = $bdd->prepare('SELECT Nom, Prenom, ID_utilisateurs, email, Ville, Mot_de_passe, Role FROM utilisateurs WHERE ID_utilisateur =  ?');
+       $check = $bdd->prepare('SELECT Nom, Prenom, ID_utilisateurs, email, Ville, Mot_de_passe, Role FROM utilisateurs WHERE ID_utilisateurs =  ?');
        $check->execute(array($ID_user));
        $data = $check->fetch();
        $row = $check->rowCount();

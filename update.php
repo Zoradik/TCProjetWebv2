@@ -1,28 +1,7 @@
 <?php
 require_once 'config.php';
-require 'vendor/autoload.php';
-$pdo = new PDO("mysql:host=MindShop.com;dbname=tcweb;charset=utf8", "root", "", [
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-]);
-
-$select = $bdd->prepare("SELECT * FROM utilisateurs");
-// $select=$bdd->prepare
-$select->setFetchMode(PDO::FETCH_ASSOC);
-$select->execute();
-$tab = $select->fetchAll();
-
-
-$query = "SELECT * FROM utilisateurs";
-$params = [];
-
-$statement = $pdo->prepare($query);
-$statement->execute($params);
-$tab = $statement->fetchAll();
-
-
+include 'update_traitement.php';
 ?>
-
 
 <!doctype html>
 <html lang="fr">
@@ -103,13 +82,13 @@ $tab = $statement->fetchAll();
                     <div class="col-6 slogan">
                         <fieldset class="form1">
                             <legend><b>Modification du profil choisi</b></legend>
-                            <form class="needs-validation" action="update_traitement.php" method="post" novalidate>
+                            <form class="needs-validation" method="post" >
 
                                 <div class="row">
 
                                     <div class="col-md-4 mb-3">
-                                        <label for="validationCustom01" class="label">Nom</label>
-                                        <input type="text" name="nom" class="form-control" id="validationCustom01" placeholder="NOM" required>
+                                        <label for="validationCustom01" class="label">Nom  </label>
+                                        <input type="text" value=<?= $nom ?> name="nom" class="form-control" id="validationCustom01" placeholder="NOM" required>
                                         <div class="invalid-feedback">
                                             Merci d'indiquer votre NOM.
                                         </div>
@@ -117,7 +96,7 @@ $tab = $statement->fetchAll();
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="validationCustom02">Pr&eacutenom</label>
-                                        <input type="text" name="prenom" class="form-control" id="validationCustom02" placeholder="Prénom" required>
+                                        <input type="text" value=<?= $prenom ?>  name="prenom" class="form-control" id="validationCustom02" placeholder="Prénom" required>
                                         <div class="invalid-feedback">
                                             Merci d'indiquer votre prenom.
                                         </div>
@@ -128,7 +107,7 @@ $tab = $statement->fetchAll();
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <label for="validationCustom04">Identifiant</label>
-                                        <input type="text" name="ID_user" class="form-control" id="validationCustom04" placeholder="Identifiant" required>
+                                        <input type="text" value="<?= $User_id ?>"  name="ID_user" class="form-control" id="validationCustom04" placeholder="Identifiant" required>
                                         <div class="invalid-feedback">
                                             Merci d'indiquer votre Identifiant.
                                         </div>
@@ -138,7 +117,7 @@ $tab = $statement->fetchAll();
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <label for="validationCustom04">Adresse mail</label>
-                                        <input type="text" name="email" class="form-control" id="validationCustom04" placeholder="Adresse mail" required>
+                                        <input type="text" value="<?= $email ?>" name="email" class="form-control" id="validationCustom04" placeholder="Adresse mail" required>
                                         <div class="invalid-feedback">
                                             Merci d'indiquer votre Adresse mail.
                                         </div>
@@ -148,7 +127,7 @@ $tab = $statement->fetchAll();
                                         <div>
                                             <label for="validationCustom04">Adresse</label>
                                             <input class="form-control" id="code" placeholder="Code postal">
-                                            <input class="form-control" id="ville" placeholder="Ville" name="ville">
+                                            <input class="form-control"value=<?= $ville ?> id="ville" placeholder="Ville" name="ville">
                                         </div>
                                         <li data-vicopo="#ville, #code" data-vicopo-click='{"#code": "code","#ville": "ville"}'>
                                             <span data-vicopo-ville></span>
@@ -160,7 +139,7 @@ $tab = $statement->fetchAll();
                                             <div class="form-group col-md-8">
                                                 <label for="validationCustom11">Quel est votre rôle?</label>
                                                 <select id="choixCategorie" name="role" class="form-select" id="validationCustom11" required>
-                                                    <option selected disabled value="">Selectionner...</option>
+                                                    <option selected disabled value=""><?= $role ?></option>
                                                     <option value="Pilote">STD</option>
                                                     <option value="Etudiant">ADM</option>
                                                 </select>
