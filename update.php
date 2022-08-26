@@ -146,7 +146,7 @@ $tab = $statement->fetchAll();
                                     <div class="form-group col-md-4">
 
                                         <div>
-                                        <label for="validationCustom04">Adresse</label>
+                                            <label for="validationCustom04">Adresse</label>
                                             <input class="form-control" id="code" placeholder="Code postal">
                                             <input class="form-control" id="ville" placeholder="Ville" name="ville">
                                         </div>
@@ -156,47 +156,47 @@ $tab = $statement->fetchAll();
                                         </li>
 
                                         <?php if ($role == 'ADM') : ?>
-                    
-                    <div class="form-group col-md-8">
-                                <label for="validationCustom11">Quel est votre rôle?</label>
-                                <select id="choixCategorie" name="role" class="form-select"  id="validationCustom11" required>
-                                <option selected disabled value="">Selectionner...</option>
-                                <option value="Pilote">STD</option>
-                                <option value="Etudiant">ADM</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Merci d'indiquer votre Rôle.
-                                </div>  
-                                <?php endif; ?>
-                            </div> 
 
-                                </div>
+                                            <div class="form-group col-md-8">
+                                                <label for="validationCustom11">Quel est votre rôle?</label>
+                                                <select id="choixCategorie" name="role" class="form-select" id="validationCustom11" required>
+                                                    <option selected disabled value="">Selectionner...</option>
+                                                    <option value="Pilote">STD</option>
+                                                    <option value="Etudiant">ADM</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Merci d'indiquer votre Rôle.
+                                                </div>
+                                            <?php endif; ?>
+                                            </div>
 
-
-
-
-                                <div class="row">
-                                    <div class="col-md-5 mb-3">
-                                        <label for="validationCustom12">Mot de passe</label>
-                                        <input type="password" name="password" class="form-control" id="validationCustom12" placeholder="Mot de passe" required>
-                                        <div class="invalid-feedback">
-                                            Merci d'indiquer votre mot de passe.
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5 mb-3">
-                                        <label for="validationCustom13">Confirmation mot de passe</label>
-                                        <input type="password" name="password_retype" class="form-control" id="validationCustom13" placeholder="Confirmation mot de passe" required>
-                                        <div class="invalid-feedback">
-                                            Merci de confirmer votre mot de passe.
-                                        </div>
                                     </div>
 
-                                </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-5 mb-3">
+                                            <label for="validationCustom12">Mot de passe</label>
+                                            <input type="password" name="password" class="form-control" id="validationCustom12" placeholder="Mot de passe" required>
+                                            <div class="invalid-feedback">
+                                                Merci d'indiquer votre mot de passe.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 mb-3">
+                                            <label for="validationCustom13">Confirmation mot de passe</label>
+                                            <input type="password" name="password_retype" class="form-control" id="validationCustom13" placeholder="Confirmation mot de passe" required>
+                                            <div class="invalid-feedback">
+                                                Merci de confirmer votre mot de passe.
+                                            </div>
+                                        </div>
+
+                                    </div>
 
 
 
 
-                                <button class="btn btn-primary" type="submit">Modifier le profil</button>
+                                    <button class="btn btn-primary" type="submit">Modifier le profil</button>
                             </form>
                         </fieldset>
                     </div>

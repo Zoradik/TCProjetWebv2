@@ -7,60 +7,52 @@
         $User_id = $_GET['Utilisateurs_ID'];
         $email = htmlspecialchars($_POST['email2']);
         $nom = htmlspecialchars($_POST['nom2']);
-
-        /*$logo_entreprise = htmlspecialchars($_POST['logo_entreprise']);*/
         $prenom = htmlspecialchars($_POST['prenom2']); 
         $ville = htmlspecialchars($_POST['ville2']); 
         $ID_user = htmlspecialchars($_POST['ID_user2']);
         $password = htmlspecialchars($_POST['password2']); 
         $password_retype = htmlspecialchars($_POST['password_retype2']); 
+        $Role = htmlspecialchars($_POST['Role2']); 
 
 
-        // On vérifie si l'utilisateur existe
+             // On vérifie si l'utilisateur existe
         $check = $bdd->prepare('SELECT Nom, Prenom, ID_utilisateurs, email, Ville, Mot_de_passe, Role FROM utilisateurs WHERE ID_utilisateur =  ?');
         $check->execute(array($ID_user));
         $data = $check->fetch();
         $row = $check->rowCount();
-        
+
         
         
         // Si la requete renvoie un 0 alors l'utilisateur n'existe pas 
         if($row == 1){ 
+           
 
 
-                $select = $bdd->query("UPDATE FROM utilisateurs WHERE F='" . $User_id . "'");
-                $donnees = $select->fetch();
-                
-                $User_id = $donnees['0'];
+            $select = $bdd->query("UPDATE FROM utilisateurs WHERE F='" . $User_id . "'");
+            $donnees = $select->fetch();
+
+            $User_id = $donnees['0'];
 
 
-                            $insert_utilisateur = $bdd->prepare('UPDATE utilisateurs SET Code_postal = :code_postal, Rue = :rue, Ville = :ville, Numero_de_voie = :voie WHERE ID_localites = :insert_utilisateur ');
-                            $insert_utilisateur->execute(array(
-                                'code_postal' => $code_postal,
-                                'rue' => $rue,
+                            $insert_localites = $bdd->prepare('UPDATE utilisateurs SET (Nom, Prenom, ID_utilisateurs, email, Ville, Mot_de_passe, Role) VALUES (:nom, :prenom, :ID_user, :email, :ville,  :passwords, :ADM)');
+                            $insert_localites->execute(array(
+                                'nom' => $nom,
+                                'prenom' => $prenom,   
+                                'ID_user' => $ID_user,
+                                'email' => $email,
                                 'ville' => $ville,
-                                'voie' => $voie,
-                                'id_localites' => $id_localites,
+                                'passwords' => $password,
+                                'ADM' => $role,
                             ));
 
-
-                            $insert_entreprise = $bdd->prepare('UPDATE entreprises SET Nom_entreprises = :nom_entreprise, Description_de_l_entreprise = :description_entreprise, Secteur_D_avctivite = :secteur_activite, Nombres_de_stagiaires_CESI_deja_acceptes_en_stage = :nb_stagiaire_accepte, Confiance_Pilotes_de_promotion = :confiance_pilote WHERE 	ID_entreprises = :id_entreprise ');
-                            $insert_entreprise->execute(array(
-                                'nom_entreprise' => $nom_entreprise,
-                                'description_entreprise'=> $description_entreprise,
-                                'secteur_activite' => $secteur_activite,
-                                'nb_stagiaire_accepte' => $nb_stagiaire_accepte,               
-                                'confiance_pilote' => $confiance_pilote,            
-                                'id_entreprise' => $id_entreprise,
-                            ));
 
                             
 
 
                             // On redirige avec le message de succès
                             
-                            header('Location:modification_entreprise.php?id='.$id_entreprise.'');
+                            header('Location:update.php?id='.$ID_user.'');
 
-            }else header('Location: creation_entreprise.php?reg_err=note');
-        }else header('Location: creation_entreprise.php?reg_err=already');
+            }else header('Location: update.php?reg_err=note');
+        }else header('Location: update.php?reg_err=already');
     
