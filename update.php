@@ -103,91 +103,100 @@ $tab = $statement->fetchAll();
                     <div class="col-6 slogan">
                         <fieldset class="form1">
                             <legend><b>Inscription</b></legend>
-                            <form class="needs-validation" action="update_traitement.php" method="post" novalidate>
+                            <form class="needs-validation" action="inscription_traitement.php" method="post" novalidate>
+                                <?php
+                                for ($i = 0; $i < count($tab); $i++) {
+                                ?>
+                                    <div class="row">
 
-                                <div class="row">
-
-                                    <div class="col-md-4 mb-3">
-                                        <label for="validationCustom01" class="label">oui</label>
-                                        <input type="text" name="nom" class="form-control" id="validationCustom01" placeholder="NOM" required>
-                                        <div class="invalid-feedback">
-                                            Merci d'indiquer votre NOM.
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validationCustom01" class="label"> <?= $tab[$i]['ID_utilisateurs'] ?></label>
+                                            <input type="text" name="nom" class="form-control" id="validationCustom01" placeholder="NOM" required>
+                                            <div class="invalid-feedback">
+                                                Merci d'indiquer votre NOM.
+                                            </div>
+                                        <?php } ?>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validationCustom02">Pr&eacutenom</label>
+                                            <input type="text" name="prenom" class="form-control" id="validationCustom02" placeholder="Prénom" required>
+                                            <div class="invalid-feedback">
+                                                Merci d'indiquer votre prenom.
+                                            </div>
                                         </div>
 
                                     </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label for="validationCustom02">Pr&eacutenom</label>
-                                        <input type="text" name="prenom" class="form-control" id="validationCustom02" placeholder="Prénom" required>
-                                        <div class="invalid-feedback">
-                                            Merci d'indiquer votre prenom.
+
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validationCustom04">Identifiant</label>
+                                            <input type="text" name="ID_user" class="form-control" id="validationCustom04" placeholder="Identifiant" required>
+                                            <div class="invalid-feedback">
+                                                Merci d'indiquer votre Identifiant.
+                                            </div>
                                         </div>
                                     </div>
 
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-                                        <label for="validationCustom04">Identifiant</label>
-                                        <input type="text" name="ID_user" class="form-control" id="validationCustom04" placeholder="Identifiant" required>
-                                        <div class="invalid-feedback">
-                                            Merci d'indiquer votre Identifiant.
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validationCustom04">Adresse mail</label>
+                                            <input type="text" name="email" class="form-control" id="validationCustom04" placeholder="Adresse mail" required>
+                                            <div class="invalid-feedback">
+                                                Merci d'indiquer votre Adresse mail.
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                        <div class="form-group col-md-4">
 
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-                                        <label for="validationCustom04">Adresse mail</label>
-                                        <input type="text" name="email" class="form-control" id="validationCustom04" placeholder="Adresse mail" required>
-                                        <div class="invalid-feedback">
-                                            Merci d'indiquer votre Adresse mail.
+                                            <div>
+                                                <label for="validationCustom04">Adresse</label>
+                                                <input class="form-control" id="code" placeholder="Code postal">
+                                                <input class="form-control" id="ville" placeholder="Ville" name="ville">
+                                            </div>
+                                            <li data-vicopo="#ville, #code" data-vicopo-click='{"#code": "code","#ville": "ville"}'>
+                                                <span data-vicopo-ville></span>
+                                                <strong data-vicopo-code-postal></strong>
+                                            </li>
+                                            <div class="form-group col-md-4">
+                                                <label for="validationCustom11">Quel est votre rôle?</label>
+                                                <select id="choixCategorie" name="role" class="form-select" id="validationCustom11" required>
+                                                    <option selected disabled value="">Selectionner...</option>
+                                                    <option value="Pilote">Pilote</option>
+                                                    <option value="Etudiant">Etudiant</option>
+                                                    <option value="Délégué">Délégué</option>
+                                                </select>
+
+                                                <div class="invalid-feedback">
+                                                    Merci d'indiquer votre Rôle.
+                                                </div>
+                                            </div>
+
                                         </div>
-                                    </div>
-                                    <div class="form-group col-md-4">
 
-                                        <div>
-                                        <label for="validationCustom04">Adresse</label>
-                                            <input class="form-control" id="code" placeholder="Code postal">
-                                            <input class="form-control" id="ville" placeholder="Ville" name="ville">
+
+
+
+                                        <div class="row">
+                                            <div class="col-md-5 mb-3">
+                                                <label for="validationCustom12">Mot de passe</label>
+                                                <input type="password" name="password" class="form-control" id="validationCustom12" placeholder="Mot de passe" required>
+                                                <div class="invalid-feedback">
+                                                    Merci d'indiquer votre mot de passe.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 mb-3">
+                                                <label for="validationCustom13">Confirmation mot de passe</label>
+                                                <input type="password" name="password_retype" class="form-control" id="validationCustom13" placeholder="Confirmation mot de passe" required>
+                                                <div class="invalid-feedback">
+                                                    Merci de confirmer votre mot de passe.
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <li data-vicopo="#ville, #code" data-vicopo-click='{"#code": "code","#ville": "ville"}'>
-                                            <span data-vicopo-ville></span>
-                                            <strong data-vicopo-code-postal></strong>
-                                        </li>
-
-
-                                        <div class="invalid-feedback">
-                                            Merci d'indiquer votre Rôle.
-                                        </div>
-                                    </div>
-
-                                </div>
 
 
 
 
-                                <div class="row">
-                                    <div class="col-md-5 mb-3">
-                                        <label for="validationCustom12">Mot de passe</label>
-                                        <input type="password" name="password" class="form-control" id="validationCustom12" placeholder="Mot de passe" required>
-                                        <div class="invalid-feedback">
-                                            Merci d'indiquer votre mot de passe.
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5 mb-3">
-                                        <label for="validationCustom13">Confirmation mot de passe</label>
-                                        <input type="password" name="password_retype" class="form-control" id="validationCustom13" placeholder="Confirmation mot de passe" required>
-                                        <div class="invalid-feedback">
-                                            Merci de confirmer votre mot de passe.
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-
-
-                                <button class="btn btn-primary" type="submit">S'inscrire</button>
+                                        <button class="btn btn-primary" type="submit">Modifier</button>
                             </form>
                         </fieldset>
                     </div>
@@ -202,10 +211,7 @@ $tab = $statement->fetchAll();
 
 
     <?php include('footer.php'); ?>
-    <!-- onchange="myFunction()" 
-value="executionDeScript"
-value=""-->
-    <!-- <script src="./assets/inscription.js"></script> -->
+
 </body>
 
 </html>
