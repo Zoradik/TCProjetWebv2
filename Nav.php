@@ -31,8 +31,10 @@ if (!empty($_POST['id_user'])) {
                         
                     <?php endif; ?>
                     <input class="style-button" type="button" value="Accueil" onclick="window.location.href='Accueil.php';">
+                    <?php if ($ID !== null) : ?>
                     <input class="style-button" type="button" value="Listes de Produit" onclick="window.location.href='ListesdeProduit.php';">
                     <input class="style-button" type="button" value="Listes de Courses" onclick="window.location.href='ListesdeCourses.php';">
+                    <?php endif; ?>
                 </div>
             </div>
 
