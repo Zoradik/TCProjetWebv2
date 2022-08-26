@@ -103,19 +103,17 @@ $tab = $statement->fetchAll();
                     <div class="col-6 slogan">
                         <fieldset class="form1">
                             <legend><b>Inscription</b></legend>
-                            <form class="needs-validation" action="inscription_traitement.php" method="post" novalidate>
-                            <?php
-                                       for ($i = 0; $i < count($tab); $i++){
-                                        ?>
+                            <form class="needs-validation" action="update_traitement.php" method="post" novalidate>
+
                                 <div class="row">
 
                                     <div class="col-md-4 mb-3">
-                                        <label for="validationCustom01" class="label"> <?= $tab[$i]['ID_utilisateurs'] ?></label>
+                                        <label for="validationCustom01" class="label">oui</label>
                                         <input type="text" name="nom" class="form-control" id="validationCustom01" placeholder="NOM" required>
                                         <div class="invalid-feedback">
                                             Merci d'indiquer votre NOM.
                                         </div>
-                                        <?php } ?>
+
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="validationCustom02">Pr&eacutenom</label>
