@@ -1,4 +1,20 @@
+<?php 
+    session_start();
+    /*if(!isset($_SESSION['user'])){
+        header('Location:connexion.php');
+    }*/
+    if(!isset($_COOKIE['user'])){
+        header('Location:connexion.php');
+    }
+    require_once 'config.php';
 
+    $User_id = $_COOKIE['id_user'];
+    $requete = $bdd->prepare("SELECT FROM utilisateurs WHERE ID_utilisateurs='" . $User_id . "'");
+    $requete->execute();
+    
+
+
+?>
 
 <!doctype html>
 <html lang="fr">
@@ -60,16 +76,16 @@
                         <div class="row">
                             <!-- Form Group (first name)-->
                             <div class="col">
-                                <label class="text-dark font-weight-bold" for="inputFirstName">Pr&eacutenom</label>
+                                <label class="text-dark font-weight-bold" for="inputFirstName">Nom</label>
                                 <section class="profil">
                                 <div class="card-text">
-						            <div class="text-center">yes</div>
+						            <div class="text-center"><?php echo($_COOKIE['Nom'])?></div>
                                 </div>  
                                 </section>
                             </div>
                             <!-- Form Group (last name)-->
                             <div class="col">
-                                <label class="text-dark font-weight-bold" for="inputLastName">Nom</label>
+                                <label class="text-dark font-weight-bold" for="inputLastName">Prénom</label>
                                 <section class="profil">
                                 <div class="card-text">
 						            <div class="text-center">yes</div>

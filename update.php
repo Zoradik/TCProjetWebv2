@@ -1,3 +1,29 @@
+<?php
+require_once 'config.php';
+require 'vendor/autoload.php';
+$pdo = new PDO("mysql:host=MindShop.com;dbname=tcweb;charset=utf8", "root", "", [
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+]);
+
+$select = $bdd->prepare("SELECT * FROM utilisateurs");
+// $select=$bdd->prepare
+$select->setFetchMode(PDO::FETCH_ASSOC);
+$select->execute();
+$tab = $select->fetchAll();
+
+
+$query = "SELECT * FROM utilisateurs";
+$params = [];
+
+$statement = $pdo->prepare($query);
+$statement->execute($params);
+$tab = $statement->fetchAll();
+
+
+?>
+
+
 <!doctype html>
 <html lang="fr">
 
@@ -77,16 +103,17 @@
                     <div class="col-6 slogan">
                         <fieldset class="form1">
                             <legend><b>Inscription</b></legend>
-                            <form class="needs-validation" action="inscription_traitement.php" method="post" novalidate>
+                            <form class="needs-validation" action="update_traitement.php" method="post" novalidate>
 
                                 <div class="row">
 
                                     <div class="col-md-4 mb-3">
-                                        <label for="validationCustom01" class="label">NOM</label>
+                                        <label for="validationCustom01" class="label">oui</label>
                                         <input type="text" name="nom" class="form-control" id="validationCustom01" placeholder="NOM" required>
                                         <div class="invalid-feedback">
                                             Merci d'indiquer votre NOM.
                                         </div>
+
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="validationCustom02">Pr&eacutenom</label>
@@ -119,6 +146,7 @@
                                     <div class="form-group col-md-4">
 
                                         <div>
+                                        <label for="validationCustom04">Adresse</label>
                                             <input class="form-control" id="code" placeholder="Code postal">
                                             <input class="form-control" id="ville" placeholder="Ville" name="ville">
                                         </div>

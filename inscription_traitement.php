@@ -39,7 +39,7 @@
        $data = $check->fetch();
        $row = $check->rowCount();
 
-       $email = strtolower($email); // on transforme toute les lettres majuscule en minuscule pour �viter que Foo@gmail.com et foo@gmail.com soient deux compte diff�rents ..
+       $email = strtolower($email); // on transforme toute les lettres majuscule en minuscule pour éviter que Foo@gmail.com et foo@gmail.com soient deux compte différents ..
         
        // Si la requete renvoie un 0 alors l'utilisateur n'existe pas 
        if($row == 0){ 
