@@ -129,7 +129,7 @@ $pages = ceil($count / PER_PAGE); //ceil toujours valeur supérieur a la virgule
                                             <th><?= TableHelper::sort('email', 'email', $_GET) ?></th>
                                             <th><?= TableHelper::sort('ville', 'ville', $_GET) ?></th>
                                             <th><?= TableHelper::sort('Role', 'Role', $_GET) ?></th>
-                                            <th>>Action</th>
+                                            <th>>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -143,6 +143,8 @@ $pages = ceil($count / PER_PAGE); //ceil toujours valeur supérieur a la virgule
                                                 <td><?= $tab[$i]['email'] ?></td>
                                                 <td><?= $tab[$i]['Ville'] ?></td>
                                                 <td><?= $tab[$i]['Role'] ?> </td>
+                                                <td><a href='/update.php'>
+                                                        <button class="btn btn-dark" type="button">Update</button> </td>
                                                 <td><a href='/delete.php?Utilisateurs_ID=<?= $tab[$i]['ID_utilisateurs'] ?>'>
                                                         <button class="btn btn-dark" type="button">Supprimer</button> </td>
                                             </tr>

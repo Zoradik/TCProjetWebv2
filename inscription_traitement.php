@@ -14,7 +14,7 @@
         $email = htmlspecialchars($_POST['email']);
         $ville = htmlspecialchars($_POST['ville']);
         //$role = htmlspecialchars($_POST['role']);
-        $role = htmlspecialchars('oui');
+        $role = htmlspecialchars('STD');
         $password = htmlspecialchars($_POST['password']);
         $password_retype = htmlspecialchars($_POST['password_retype']);
 
