@@ -102,13 +102,13 @@ $tab = $statement->fetchAll();
 
                     <div class="col-6 slogan">
                         <fieldset class="form1">
-                            <legend><b>Inscription</b></legend>
+                            <legend><b>Modification du profil choisi</b></legend>
                             <form class="needs-validation" action="update_traitement.php" method="post" novalidate>
 
                                 <div class="row">
 
                                     <div class="col-md-4 mb-3">
-                                        <label for="validationCustom01" class="label">oui</label>
+                                        <label for="validationCustom01" class="label">Nom</label>
                                         <input type="text" name="nom" class="form-control" id="validationCustom01" placeholder="NOM" required>
                                         <div class="invalid-feedback">
                                             Merci d'indiquer votre NOM.
@@ -155,11 +155,20 @@ $tab = $statement->fetchAll();
                                             <strong data-vicopo-code-postal></strong>
                                         </li>
 
-
-                                        <div class="invalid-feedback">
-                                            Merci d'indiquer votre Rôle.
-                                        </div>
-                                    </div>
+                                        <?php if ($role == 'ADM') : ?>
+                    
+                    <div class="form-group col-md-8">
+                                <label for="validationCustom11">Quel est votre rôle?</label>
+                                <select id="choixCategorie" name="role" class="form-select"  id="validationCustom11" required>
+                                <option selected disabled value="">Selectionner...</option>
+                                <option value="Pilote">STD</option>
+                                <option value="Etudiant">ADM</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Merci d'indiquer votre Rôle.
+                                </div>  
+                                <?php endif; ?>
+                            </div> 
 
                                 </div>
 
@@ -187,7 +196,7 @@ $tab = $statement->fetchAll();
 
 
 
-                                <button class="btn btn-primary" type="submit">S'inscrire</button>
+                                <button class="btn btn-primary" type="submit">Modifier le profil</button>
                             </form>
                         </fieldset>
                     </div>
@@ -202,10 +211,7 @@ $tab = $statement->fetchAll();
 
 
     <?php include('footer.php'); ?>
-    <!-- onchange="myFunction()" 
-value="executionDeScript"
-value=""-->
-    <!-- <script src="./assets/inscription.js"></script> -->
+
 </body>
 
 </html>
