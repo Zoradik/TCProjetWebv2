@@ -140,8 +140,8 @@ include 'update_traitement.php';
                                                 <label for="validationCustom11">Quel est votre rôle?</label>
                                                 <select id="choixCategorie" name="role" class="form-select" id="validationCustom11" required>
                                                     <option selected disabled value=""><?= $role ?></option>
-                                                    <option value="Pilote">STD</option>
-                                                    <option value="Etudiant">ADM</option>
+                                                    <option value="Standard">STD</option>
+                                                    <option value="Admin">ADM</option>
                                                 </select>
                                                 <div class="invalid-feedback">
                                                     Merci d'indiquer votre Rôle.
@@ -150,30 +150,6 @@ include 'update_traitement.php';
                                             </div>
 
                                     </div>
-
-
-
-
-                                    <div class="row">
-                                        <div class="col-md-5 mb-3">
-                                            <label for="validationCustom12">Mot de passe</label>
-                                            <input type="password" name="password" class="form-control" id="validationCustom12" placeholder="Mot de passe" required>
-                                            <div class="invalid-feedback">
-                                                Merci d'indiquer votre mot de passe.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 mb-3">
-                                            <label for="validationCustom13">Confirmation mot de passe</label>
-                                            <input type="password" name="password_retype" class="form-control" id="validationCustom13" placeholder="Confirmation mot de passe" required>
-                                            <div class="invalid-feedback">
-                                                Merci de confirmer votre mot de passe.
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-
 
                                     <button class="btn btn-primary" type="submit">Modifier le profil</button>
                             </form>

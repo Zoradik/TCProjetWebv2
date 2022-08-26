@@ -183,7 +183,7 @@ if (!empty($_POST['id_user'])) {
         </div>
         <div class="col">
             <a href="profil.php?action=deconnecter" class="btn-danger btn-lg"> D&eacuteconnexion </a>
-            <a href="update.php" class="btn-danger btn-lg"> Modifier le profil </a>
+            <a href="update.php?Utilisateurs_ID=<?= $ID ?>" class="btn-danger btn-lg"> Modifier le profil </a>
         </div>
         <div class="col">
         </div>
