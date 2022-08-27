@@ -15,7 +15,7 @@
     $email = $data[0]['email'];
     $role = $data[0]['Role'];
 
-    if(isset($_POST['email']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['ville']) && isset($_POST['ID_user']) && isset($_POST['role']) )
+    if(isset($_POST['email']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['ville']) && isset($_POST['ID_user']) )
     {
 
         $email = htmlspecialchars($_POST['email']);
@@ -23,15 +23,15 @@
         $prenom = htmlspecialchars($_POST['prenom']); 
         $ville = htmlspecialchars($_POST['ville']); 
         $ID = htmlspecialchars($_POST['ID_user']);
-        if ($role == 'ADM') : 
-            $role = htmlspecialchars($_POST['role']);
-        endif; 
+        // if ($role == 'ADM') : 
+        //     $role = htmlspecialchars($_POST['role']);
+        // endif; 
 var_dump($role);
 
-                    if ($role == 'ADM') : 
-                        $result = $bdd->prepare("UPDATE `utilisateurs` SET `Nom` = '$nom', `prenom` = '$prenom', `ville` = '$ville',`email` = '$email', `ID_utilisateurs` = '$ID', `Role` = '$role' WHERE `utilisateurs`.`ID_utilisateurs` = '$User_id'");
+                    // if ($role == 'ADM') : 
+                    //     $result = $bdd->prepare("UPDATE `utilisateurs` SET `Nom` = '$nom', `prenom` = '$prenom', `ville` = '$ville',`email` = '$email', `ID_utilisateurs` = '$ID', `Role` = '$role' WHERE `utilisateurs`.`ID_utilisateurs` = '$User_id'");
 
-                    endif; 
+                    // endif; 
                               $result = $bdd->prepare("UPDATE `utilisateurs` SET `Nom` = '$nom', `prenom` = '$prenom', `ville` = '$ville',`email` = '$email', `ID_utilisateurs` = '$ID'   WHERE `utilisateurs`.`ID_utilisateurs` = '$User_id'");
 
                             // $result = $bdd->prepare("UPDATE utilisateurs SET ID_utilisateurs = $ID_user, Nom =$nom, Prenom =$prenom,email= $email Ville=$ville WHERE $User_id ");
