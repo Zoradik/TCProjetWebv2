@@ -2,9 +2,9 @@
 // on va chercher les articles dans la base
 // on se connecte a la base
 require_once 'config.php';
-?>
-<?php
-require_once 'class/OpenFoodFactsAllProduct.php';
+
+
+require 'class/OpenFoodFactsAllProduct.php';
 $GET = new OpenFoodFactsAllProduct('3017620422003');
 $forecast = $GET->getForecast('3017620422003');
 ?>
