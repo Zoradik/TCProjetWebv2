@@ -49,10 +49,10 @@ $forecast = $GET->getForecast('3017620422003');
                         <div class="SousUtilisateurs">
                             <div class="Utilisateurs">
                             <div class="scrollertw">
-                                    <h1> Tous les utilisateurs</h1>
+                                    <h1> Tous les produits</h1>
                                     <form action="">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="q" placeholder="Rechercher par email" value="oui">
+                                            <input type="text" class="form-control" name="q" placeholder="Rechercher par email" value="Rechercher un produit">
                                         </div>
                                         <button class="btn btn-dark">Rechercher</button>
                                     </form>
