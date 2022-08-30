@@ -23,14 +23,15 @@
 
 
 </head>
- 
+<?php include('nav.php'); ?>
 
 <body>
 
 <div id="contenu">
 
+<h1> Création d'un article </h1> 
 
-    <?php include('nav.php'); ?>
+    
 
 
 
