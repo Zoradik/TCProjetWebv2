@@ -1,8 +1,4 @@
 ﻿<?php
-//class
-
-use App\TableHelper;
-use App\URLHelper;
 
 require_once 'config.php';
 require 'vendor/autoload.php';
