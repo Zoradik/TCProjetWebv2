@@ -56,41 +56,38 @@ $forecast = $GET->getForecast('3017620422003');
                     <div class=".col-xl-">
                         <div class="onestlabis">
                             <div class="twitter">
-                                <div class="separation1">
-                                    <div class="col-12">
-                                        <ul>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom0'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom1'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom2'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom3'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom4'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom5'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom6'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom7'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom8'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom9'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom10'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom11'] ?></a></li>
-                                        </ul>
+                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="Carousel3" data-slide-to="0" class="active"></li>
+                                        <li data-target="Carousel2" data-slide-to="1"></li>
+                                        <li data-target="Carousel1" data-slide-to="2"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="Logo/Carousel3.png" alt="...">
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="Logo/Carousel2.jpg" alt="...">
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="Logo/Carousel1.png" alt="...">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="separation1 2">
-                                        <ul>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom12'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom13'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom14'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom15'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom16'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom17'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom18'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom19'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom20'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom21'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom22'] ?></a></li>
-                                            <li> <a href="#!" style="color: #a2c4c9; " class="link"> <?= $forecast['Nom23'] ?></a></li>
-                                        </ul>
-                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
