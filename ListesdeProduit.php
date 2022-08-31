@@ -242,7 +242,7 @@ $forecast = $GET->getForecast('3017620422003');
             </div>
         </div>
     </div>
-    <?php //include('footer.php'); ?>
+    <?php include('footer.php'); ?>
 
 
 </body>

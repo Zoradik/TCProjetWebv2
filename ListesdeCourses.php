@@ -1,5 +1,22 @@
+<?php
+require_once 'config.php';
+include 'ListesdeCourses_traitement.php';
+$ID = null;
+
+if (!empty($_COOKIE['id_user'])) {
+    $ID = $_COOKIE['id_user'];
+}
+
+if (!empty($_POST['id_user'])) {
+    setcookie('id_user', $_POST['id_user']);
+    $ID = $_POST['id_user'];
+}
+
+?>
+
 <!doctype html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <title>MindShop</title>
@@ -17,7 +34,7 @@
     <link Rel="Stylesheet" href="Https://Stackpath.Bootstrapcdn.Com/Bootstrap/4.3.1/Css/Bootstrap.Min.Css">
     <link Rel="Stylesheet" href="Https://Cdnjs.Cloudflare.Com/Ajax/Libs/Font-Awesome/5.9.0/Css/All.Css">
 
-    
+
 
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
 
@@ -27,19 +44,26 @@
 
 <body>
 
-<div id="contenu">
+    <div id="contenu">
 
-<h1> Création d'un article </h1> 
+        <h1>Ajoutez une liste de course au compte <?= htmlentities($ID) ?> </h1>
 
-    
+        <div class="container">
+            <form method="post" action="">
+                <label>Nom de la nouvelle liste de course</label>
+                <br>
+                <input type="text" name="ID_Liste" />
+                <br><br>
 
+                <input type="submit" name="save" value="submit" />
+            </form>
+        </div>
 
+        <footer>
+            <?php include('footer.php'); ?>
 
-
-    <footer>
-    <?php include('footer.php'); ?>
-
-</div>
-</footer>
+    </div>
+    </footer>
 </body>
+
 </html>
