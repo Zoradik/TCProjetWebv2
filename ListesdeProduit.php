@@ -3,8 +3,8 @@
 require_once 'config.php';
 require 'vendor/autoload.php';
 require 'class/OpenFoodFactsAllProduct.php';
-$GET = new OpenFoodFactsAllProduct('3017620422003');
-$forecast = $GET->getForecast('3017620422003');
+// $GET = new OpenFoodFactsAllProduct('3017620422003');
+// $forecast = $GET->getForecast('3017620422003');
 
 ?>
 
@@ -44,7 +44,7 @@ $forecast = $GET->getForecast('3017620422003');
                     <div class=".col-xl-">
                         <div class="SousUtilisateurs">
                             <div class="Utilisateurs">
-                            <div class="scrollertw">
+                                <div class="scrollertw">
                                     <h1> Tous les produits</h1>
                                     <form action="">
                                         <div class="form-group">
@@ -62,176 +62,16 @@ $forecast = $GET->getForecast('3017620422003');
                                             </tr>
                                         </thead>
                                         <tbody>
-
-                                            <tr>
-                                                <td><?= $forecast['Nom0'] ?> 400g</td>
-                                                <td><?= $forecast['Marque0'] ?></td>
-                                                <td><?= $forecast['ID0'] ?></td>
-                                                <td><a href='/ConsulterProduit.php?Produit_ID=<?= $forecast['ID0'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom1'] ?> 75cl</td>
-                                                <td><?= $forecast['Marque1'] ?></td>
-                                                <td><?= $forecast['ID1'] ?></td>
-                                                <td><a href='/ConsulterProduit.php?Produit_ID=<?= $forecast['ID1'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom2'] ?></td>
-                                                <td><?= $forecast['Marque2'] ?></td>
-                                                <td><?= $forecast['ID2'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID2'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom3'] ?> 1L</td>
-                                                <td><?= $forecast['Marque3'] ?></td>
-                                                <td><?= $forecast['ID3'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID3'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom4']?> 1000g</td>
-                                                <td><?= $forecast['Marque4'] ?></td>
-                                                <td><?= $forecast['ID4'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID4'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom5'] ?></td>
-                                                <td><?= $forecast['Marque5'] ?></td>
-                                                <td><?= $forecast['ID5'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID5'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom6'] ?> 1L</td>
-                                                <td><?= $forecast['Marque6'] ?></td>
-                                                <td><?= $forecast['ID6'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID6'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom7'] ?></td>
-                                                <td><?= $forecast['Marque7'] ?></td>
-                                                <td><?= $forecast['ID7'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID7'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom8'] ?></td>
-                                                <td><?= $forecast['Marque8'] ?></td>
-                                                <td><?= $forecast['ID8'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID8'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom9'] ?></td>
-                                                <td><?= $forecast['Marque9'] ?></td>
-                                                <td><?= $forecast['ID9'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID9'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom10'] ?></td>
-                                                <td><?= $forecast['Marque10'] ?></td>
-                                                <td><?= $forecast['ID10'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID10'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom11'] ?></td>
-                                                <td><?= $forecast['Marque11'] ?></td>
-                                                <td><?= $forecast['ID11'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID11'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom12'] ?></td>
-                                                <td><?= $forecast['Marque12'] ?></td>
-                                                <td><?= $forecast['ID12'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID12'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom13'] ?></td>
-                                                <td><?= $forecast['Marque13'] ?></td>
-                                                <td><?= $forecast['ID13'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID13'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom14'] ?></td>
-                                                <td><?= $forecast['Marque14'] ?></td>
-                                                <td><?= $forecast['ID14'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID14'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pâte-tartiner-noisettes</td>
-                                                <td><?= $forecast['Marque15'] ?></td>
-                                                <td><?= $forecast['ID15'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID15'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Buerre-de-cacahuete</td>
-                                                <td><?= $forecast['Marque16'] ?></td>
-                                                <td><?= $forecast['ID16'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID16'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom17'] ?></td>
-                                                <td><?= $forecast['Marque17'] ?></td>
-                                                <td><?= $forecast['ID17'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID17'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom181'] ?> <?= $forecast['Nom182'] ?> <?= $forecast['Nom183'] ?></td>
-                                                <td><?= $forecast['Marque18'] ?></td>
-                                                <td><?= $forecast['ID18'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID18'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom19'] ?></td>
-                                                <td><?= $forecast['Marque19'] ?></td>
-                                                <td><?= $forecast['ID19'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID19'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom20'] ?> 1L</td>
-                                                <td><?= $forecast['Marque20'] ?></td>
-                                                <td><?= $forecast['ID20'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID20'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                           
-                                            <tr>
-                                                <td><?= $forecast['Nom211'] ?> <?= $forecast['Nom212'] ?> <?= $forecast['Nom213'] ?></td>
-                                                <td><?= $forecast['Marque21'] ?></td>
-                                                <td><?= $forecast['ID21'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID21'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom221'] ?> <?= $forecast['Nom222'] ?> <?= $forecast['Nom223'] ?></td>
-                                                <td><?= $forecast['Marque22'] ?></td>
-                                                <td><?= $forecast['ID22'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID22'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?= $forecast['Nom231'] ?> <?= $forecast['Nom232'] ?> d'avoine</td>
-                                                <td><?= $forecast['Marque23'] ?></td>
-                                                <td><?= $forecast['ID23'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID23'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
-
+                                            <?php for ($i = 0; $i < 24; $i++) { ?>
+                                                <tr>
+                                                    <td><?= $data["products"][$i]['product_name'] ?> </td>
+                                                    <td><?= $data["products"][$i]['brands'] ?></td>
+                                                    <td><?= $data["products"][$i]['categories'] ?></td>
+                                                    <td><a href='/ConsulterProduit.php?Produit_ID=<?= $i ?>'>
+                                                            <button class="btn btn-dark" type="button">Consulter</button> </a></td>
+                                                </tr>
+                                              
+                                            <?php } ?>
                                 </div>
                                 </tbody>
                                 </table>

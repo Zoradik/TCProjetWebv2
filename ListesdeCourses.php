@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+include 'class/OpenFoodFactsAllProduct.php';
 include 'ListesdeCourses_traitement.php';
 $ID = null;
 
@@ -64,7 +65,30 @@ if (!empty($_POST['id_user'])) {
             for ($i = 0; $i < count($NomListesResult); $i++) {
             ?>
                 <tr>
+
                     <td><?= $NomListesResult[$i]['NomListe'] ?></td>
+                    <?php
+                    // var_dump($NomListesResult[$i]['NomListe']);
+                    $wishlistname = $NomListesResult[$i]['NomListe'];
+                    $ProduitListe = $bdd->prepare("SELECT ID_produit FROM listeproduit WHERE NomListe ='$wishlistname'");
+                    $ProduitListe->execute();
+                    $ProduitListeResult = $ProduitListe->fetchAll();
+                    // var_dump($ProduitListeResult);
+                    ?>
+                    <?php for ($j = 0; $j < count($ProduitListeResult); $j++) {
+                        $IDproduit = $ProduitListeResult[$j]['ID_produit'];
+                        echo $data["products"][(int)$j]['product_name'];
+                        // var_dump($IDproduit);
+                        echo'</br>';
+                        
+                    }
+                    ?>
+                        <td><a href='/delete.php?NomListe=<?= $wishlistname ?>'>
+                                                        <button class="btn btn-dark" type="button">Supprimer</button> </a></td>
+                                                        <?php
+                    ?>
+
+                    
                     <!-- <td><a href='/update.php?Utilisateurs_ID=<? //= $tab[$i]['ID_utilisateurs'] 
                                                                     ?>'>
                             <button class="btn btn-dark" type="button">Update</button> </td>
