@@ -58,21 +58,24 @@ if (!empty($_POST['id_user'])) {
                 <input type="submit" name="save" value="submit" />
             </form>
         </div>
+        <tbody>
 
-        <div>
             <?php
             for ($i = 0; $i < count($NomListesResult); $i++) {
             ?>
                 <tr>
                     <td><?= $NomListesResult[$i]['NomListe'] ?></td>
-                    <!-- <td><a href='/update.php?Utilisateurs_ID=<? //= $tab[$i]['ID_utilisateurs'] ?>'>
+                    <!-- <td><a href='/update.php?Utilisateurs_ID=<? //= $tab[$i]['ID_utilisateurs'] 
+                                                                    ?>'>
                             <button class="btn btn-dark" type="button">Update</button> </td>
-                    <td><a href='/delete.php?Utilisateurs_ID=<? //= $tab[$i]['ID_utilisateurs'] ?>'>
+                    <td><a href='/delete.php?Utilisateurs_ID=<? //= $tab[$i]['ID_utilisateurs'] 
+                                                                ?>'>
                             <button class="btn btn-dark" type="button">Supprimer</button> </td> -->
                 </tr>
-            </br>
+                </br>
             <?php } ?>
-        </div>
+
+        </tbody>
 
 
 

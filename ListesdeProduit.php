@@ -67,15 +67,15 @@ $forecast = $GET->getForecast('3017620422003');
                                                 <td><?= $forecast['Nom0'] ?> 400g</td>
                                                 <td><?= $forecast['Marque0'] ?></td>
                                                 <td><?= $forecast['ID0'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID0'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
+                                                <td><a href='/ConsulterProduit.php?Produit_ID=<?= $forecast['ID0'] ?>'>
+                                                        <button class="btn btn-dark" type="button">Consulter</button> </a></td>
                                             </tr>
                                             <tr>
                                                 <td><?= $forecast['Nom1'] ?> 75cl</td>
                                                 <td><?= $forecast['Marque1'] ?></td>
                                                 <td><?= $forecast['ID1'] ?></td>
-                                                <td><a href='/delete.php?Produit_ID=<?= $forecast['ID1'] ?>'>
-                                                        <button class="btn btn-dark" type="button">Consulter</button> </td>
+                                                <td><a href='/ConsulterProduit.php?Produit_ID=<?= $forecast['ID1'] ?>'>
+                                                        <button class="btn btn-dark" type="button">Consulter</button> </a></td>
                                             </tr>
                                             <tr>
                                                 <td><?= $forecast['Nom2'] ?></td>

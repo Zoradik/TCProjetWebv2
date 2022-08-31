@@ -5,7 +5,7 @@
     $ID = $_COOKIE['id_user'];
 
 //Vérifie si il y a une wishliste pour le USER connecté
-$hasWish = $bdd->prepare("SELECT EXISTS(SELECT ID_Liste FROM wishlist WHERE ID_utilisateurs='$ID') AS OUTPUT");
+$hasWish = $bdd->prepare("SELECT EXISTS(SELECT NomListe FROM wishlist WHERE ID_utilisateurs='$ID') AS OUTPUT");
    $hasWish->execute();
    $hasWishResult = $hasWish->fetch();
 
@@ -13,7 +13,7 @@ $hasWish = $bdd->prepare("SELECT EXISTS(SELECT ID_Liste FROM wishlist WHERE ID_u
 // Vérifie que l'offre n'est pas déjà dans la wishlist de l'étudiant
 
    if ($hasWishResult['OUTPUT'] == 1) {
-    $queryCount = $bdd->prepare("SELECT COUNT(ID_Liste) as count FROM wishlist WHERE ID_utilisateurs='$ID'");
+    $queryCount = $bdd->prepare("SELECT COUNT(NomListe) as count FROM wishlist WHERE ID_utilisateurs='$ID'");
     $queryCount->execute();
     $queryCountResult = (int)$queryCount->fetch()['count'];
 var_dump($queryCountResult);
