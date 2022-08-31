@@ -209,7 +209,7 @@ $forecast = $GET->getForecast('3017620422003');
                                                 <td><?= $forecast['ID20'] ?></td>
                                                 <td><a href='/delete.php?Produit_ID=<?= $forecast['ID20'] ?>'>
                                                         <button class="btn btn-dark" type="button">Consulter</button> </td>
-                                            </tr>
+                                           
                                             <tr>
                                                 <td><?= $forecast['Nom211'] ?> <?= $forecast['Nom212'] ?> <?= $forecast['Nom213'] ?></td>
                                                 <td><?= $forecast['Marque21'] ?></td>

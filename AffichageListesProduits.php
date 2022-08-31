@@ -44,45 +44,13 @@ if (!empty($_POST['id_user'])) {
 
 <body>
 
-    <div id="contenu">
-
-        <h1>Ajoutez une liste de course au compte <?= htmlentities($ID) ?> </h1>
-
-        <div class="container">
-            <form method="post" action="">
-                <label>Nom de la nouvelle liste de course</label>
-                <br>
-                <input type="text" name="ID_Liste" />
-                <br><br>
-
-                <input type="submit" name="save" value="submit" />
-            </form>
-        </div>
-
-        <div>
-            <?php
-            for ($i = 0; $i < count($NomListesResult); $i++) {
-            ?>
-                <tr>
-                    <td><?= $NomListesResult[$i]['NomListe'] ?></td>
-                    <!-- <td><a href='/update.php?Utilisateurs_ID=<? //= $tab[$i]['ID_utilisateurs'] ?>'>
-                            <button class="btn btn-dark" type="button">Update</button> </td>
-                    <td><a href='/delete.php?Utilisateurs_ID=<? //= $tab[$i]['ID_utilisateurs'] ?>'>
-                            <button class="btn btn-dark" type="button">Supprimer</button> </td> -->
-                </tr>
-            </br>
-            <?php } ?>
-        </div>
+   
 
 
 
 
-
-
-        <footer>
-            <?php include('footer.php'); ?>
-
-    </div>
+    <footer>
+       <?php include('footer.php'); ?>
     </footer>
 </body>
 

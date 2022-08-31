@@ -2,48 +2,38 @@
     require_once 'config.php'; // On inclu la connexion à la bdd
     // Si les variables existent et qu'elles ne sont pas vides
     
-    $User_id = $_GET['Utilisateurs_ID'];
+    $ID = $_COOKIE['id_user'];
 
-    $check = $bdd->prepare("SELECT * FROM utilisateurs WHERE ID_utilisateurs='" . $User_id . "'");
-    $check->execute();
-    $data = $check->fetchAll();
-    var_dump($data);
+//Vérifie si il y a une wishliste pour le USER connecté
+$hasWish = $bdd->prepare("SELECT EXISTS(SELECT ID_Liste FROM wishlist WHERE ID_utilisateurs='$ID') AS OUTPUT");
+   $hasWish->execute();
+   $hasWishResult = $hasWish->fetch();
 
-    
-//     $nom = $data[0]['Nom'];
-//     $prenom = $data[0]['Prenom'];
-//     $ville = $data[0]['Ville'];
-//     $ID = $data[0]['ID_utilisateurs'];
-//     $email = $data[0]['email'];
-//     $role = $data[0]['Role'];
+// var_dump($hasWishResult);
+// Vérifie que l'offre n'est pas déjà dans la wishlist de l'étudiant
 
-//     if(isset($_POST['email']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['ville']) && isset($_POST['ID_user']) )
-//     {
+   if ($hasWishResult['OUTPUT'] == 1) {
+    $queryCount = $bdd->prepare("SELECT COUNT(ID_Liste) as count FROM wishlist WHERE ID_utilisateurs='$ID'");
+    $queryCount->execute();
+    $queryCountResult = (int)$queryCount->fetch()['count'];
+var_dump($queryCountResult);
 
-//         $email = htmlspecialchars($_POST['email']);
-//         $nom = htmlspecialchars($_POST['nom']);
-//         $prenom = htmlspecialchars($_POST['prenom']); 
-//         $ville = htmlspecialchars($_POST['ville']); 
-//         $ID = htmlspecialchars($_POST['ID_user']);
-//         // if ($role == 'ADM') : 
-//         //     $role = htmlspecialchars($_POST['role']);
-//         // endif; 
-// var_dump($role);
+    $NomListes = $bdd->prepare("SELECT NomListe FROM wishlist WHERE ID_utilisateurs='$ID'");
+    $NomListes->execute();
+    $NomListesResult = $NomListes->fetchAll();
+    var_dump($NomListesResult);
 
-//                     // if ($role == 'ADM') : 
-//                     //     $result = $bdd->prepare("UPDATE `utilisateurs` SET `Nom` = '$nom', `prenom` = '$prenom', `ville` = '$ville',`email` = '$email', `ID_utilisateurs` = '$ID', `Role` = '$role' WHERE `utilisateurs`.`ID_utilisateurs` = '$User_id'");
-
-//                     // endif; 
-//                               $result = $bdd->prepare("UPDATE `utilisateurs` SET `Nom` = '$nom', `prenom` = '$prenom', `ville` = '$ville',`email` = '$email', `ID_utilisateurs` = '$ID'   WHERE `utilisateurs`.`ID_utilisateurs` = '$User_id'");
-
-//                             // $result = $bdd->prepare("UPDATE utilisateurs SET ID_utilisateurs = $ID_user, Nom =$nom, Prenom =$prenom,email= $email Ville=$ville WHERE $User_id ");
-//                             $result->execute();
-
-                            
+   }
 
 
-//                             // On redirige avec le message de succès
-                            
-//                             header('Location:update.php?Utilisateurs_ID='.$ID.'');
 
-//     }
+
+    if(isset($_POST['save'])){
+        $NomListe = $_POST['ID_Liste'];
+// var_dump($NomListe);
+    $insert_user = $bdd->prepare("INSERT INTO wishlist (ID_utilisateurs, NomListe) VALUES( '" . $ID . "',  '" . $NomListe . "' )");
+    // var_dump($ID);
+    // var_dump($insert_user);
+    // echo"Nom";
+     $insert_user->execute();
+    }
