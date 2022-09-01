@@ -6,6 +6,21 @@ require 'class/OpenFoodFactsAllProduct.php';
 // $GET = new OpenFoodFactsAllProduct('3017620422003');
 // $forecast = $GET->getForecast('3017620422003');
 
+$pdo = new PDO("mysql:host=MindShop.com;dbname=tcweb;charset=utf8", "root", "", [
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+]);
+
+$query = "SELECT * FROM listeproduit";
+$params = [];
+
+if (!empty($_GET['q'])) {
+    $query .= " WHERE ID_produit LIKE :nameproduct";
+    $params['nameproduct'] = '%' . $_GET['q'] . '%';
+}
+$statement = $pdo->prepare($query);
+$statement->execute($params);
+$products = $statement->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +63,7 @@ require 'class/OpenFoodFactsAllProduct.php';
                                     <h1> Tous les produits</h1>
                                     <form action="">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="q" placeholder="Rechercher par email" value="Rechercher un produit">
+                                            <input type="text" class="form-control" name="q" placeholder="Rechercher en produit">
                                         </div>
                                         <button class="btn btn-dark">Rechercher</button>
                                     </form>
@@ -57,12 +72,14 @@ require 'class/OpenFoodFactsAllProduct.php';
                                             <tr>
                                                 <th>Nom du produit</th>
                                                 <th>Marque du produit</th>
-                                                <th>ID du produit</th>
+                                                <th>Description du produit</th>
                                                 <th>>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php for ($i = 0; $i < 24; $i++) { ?>
+                                            <?php
+                                            $count = $data['page_count'];
+                                             for ($i = 0; $i < (int)$count; $i++) { ?>
                                                 <tr>
                                                     <td><?= $data["products"][$i]['product_name'] ?> </td>
                                                     <td><?= $data["products"][$i]['brands'] ?></td>
@@ -70,7 +87,7 @@ require 'class/OpenFoodFactsAllProduct.php';
                                                     <td><a href='/ConsulterProduit.php?Produit_ID=<?= $i ?>'>
                                                             <button class="btn btn-dark" type="button">Consulter</button> </a></td>
                                                 </tr>
-                                              
+
                                             <?php } ?>
                                 </div>
                                 </tbody>

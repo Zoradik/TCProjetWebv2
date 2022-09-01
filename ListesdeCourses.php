@@ -13,6 +13,12 @@ if (!empty($_POST['id_user'])) {
     $ID = $_POST['id_user'];
 }
 
+
+$query = "SELECT * FROM listeproduit";
+
+if (!empty($_GET['q'])){
+    $query .= "WHERE ";
+}
 ?>
 
 <!doctype html>
