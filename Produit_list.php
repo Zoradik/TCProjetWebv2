@@ -1,6 +1,6 @@
 <?php
 
-include 'Consulter_traitement.php';
+include 'Produit_list_traitement.php';
 
 ?>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ include 'Consulter_traitement.php';
                                     <form method='post'>
                                         <div class="form-group">
                                             <br>
-                                            <input type="submit" class="form-control" name="Ajouter" method='post'>
+                                            <input type="submit" class="form-control" name="Delete" method='post'>
                                             <br>
                                             <h2>
                                                 Ajoutez a la liste de course :
@@ -53,13 +53,13 @@ include 'Consulter_traitement.php';
                                             <br>
                                             </input>
                                             <thead>
-                                                <select name="NomListe" method='post'>
+                                                <select name="NomProduit" method='post'>
                                                     <?php
                                                     for ($i = 0; $i < count($NomListesResult); $i++) {
                                                     ?>
                                                         <tr>
-                                                            <td><?= $NomListesResult[$i]['NomListe'] ?></td>
-                                                            <option value="<?= $NomListesResult[$i]['NomListe'] ?>"><?= $NomListesResult[$i]['NomListe'] ?></option>
+                                                            <td><?= $NomListesResult[$i]['ID_produit'] ?></td>
+                                                            <option value="<?= $NomListesResult[$i]['ID_produit'] ?>"><?= $NomListesResult[$i]['ID_produit'] ?></option>
 
                                                         </tr>
                                                         </br>

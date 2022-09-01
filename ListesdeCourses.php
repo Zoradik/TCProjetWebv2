@@ -51,6 +51,7 @@ if (!empty($_POST['id_user'])) {
                     <div class=".col-xl-">
                         <div class="SousCourses">
                             <div class="Courses">
+                                <div class="scrollertw">
                                 <div id="contenu">
                                     <h1> Ajoutez une liste de course au compte <?= htmlentities($ID) ?></h1>
                                     <div class="container">
@@ -78,12 +79,7 @@ if (!empty($_POST['id_user'])) {
                                                 <div table class="table table-strip">
                                                     <thead>
                                                         <tr>
-
-
-                                                            <td><?= $NomListesResult[$i]['NomListe'] ?></td>
-                                                            <td><a href='/delete_Courses.php?NomListe=<?= $wishlistname ?>'>
-                                                                    <button class="btn btn-dark" type="button">Supprimer la liste de course</button> </a></td>
-                                                            <?php
+                                                        <?php
                                                             // var_dump($NomListesResult[$i]['NomListe']);
                                                             $wishlistname = $NomListesResult[$i]['NomListe'];
                                                             $ProduitListe = $bdd->prepare("SELECT ID_produit FROM listeproduit WHERE NomListe ='$wishlistname'");
@@ -91,6 +87,11 @@ if (!empty($_POST['id_user'])) {
                                                             $ProduitListeResult = $ProduitListe->fetchAll();
                                                             // var_dump($ProduitListeResult);
                                                             ?>
+
+                                                            <td><?= $NomListesResult[$i]['NomListe'] ?></td>
+                                                            <td><a href='/delete_Courses.php?Name_list=<?= $wishlistname ?>'>
+                                                                    <button class="btn btn-dark" type="button">Supprimer la liste de course</button> </a></td>
+                                                            
 
                                                         </tr>
                                                     </thead>
@@ -105,8 +106,8 @@ if (!empty($_POST['id_user'])) {
                                                         }
                                                         ?>
                                                     </td>
-                                                    <td><a href='/ConsulterProduit.php?Produit_ID=<?= $i ?>'>
-                                                            <button class="btn btn-dark" type="button">Supprimer 1/+ produits</button> </a< /td>
+                                                    <td><a href='/Produit_list.php?Liste_ID=<?= $wishlistname ?>'>
+                                                            <button class="btn btn-dark" type="button">Supprimer 1/+ produits</button> </a> </td>
                                                             <?php
                                                             ?>
                                                             </tr>
@@ -122,7 +123,7 @@ if (!empty($_POST['id_user'])) {
 
                                     <footer>
                                         <?php include('footer.php'); ?>
-
+                                        </div>
                                 </div>
                             </div>
                         </div>
