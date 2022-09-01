@@ -4,9 +4,6 @@
 require_once 'config.php';
 
 
-require 'class/OpenFoodFactsAllProduct.php';
-$GET = new OpenFoodFactsAllProduct('3017620422003');
-$forecast = $GET->getForecast('3017620422003');
 ?>
 
 
