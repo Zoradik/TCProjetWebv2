@@ -44,73 +44,93 @@ if (!empty($_POST['id_user'])) {
 <?php include('nav.php'); ?>
 
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <div class=".col-xl-">
+                        <div class="SousCourses">
+                            <div class="Courses">
+                                <div id="contenu">
+                                    <h1> Ajoutez une liste de course au compte <?= htmlentities($ID) ?></h1>
+                                    <div class="container">
+                                        <form method="post" action="">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Nom de la liste de course " name="ID_Liste">
+                                                <br>
+                                            </div>
+                                            <button class="btn btn-dark" type="submit" name="save" value="submit">Ajouter la nouvelle liste</button>
+                                        </form>
+                                    </div>
+                                    </form>
+                                    <table class="table table-strip">
+                                        <thead>
+                                            <tr>
+                                                <th>Nom de la liste</th>
+                                                <th>Nom des produits associés </th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            for ($i = 0; $i < count($NomListesResult); $i++) {
+                                            ?>
+                                                <div table class="table table-strip">
+                                                    <thead>
+                                                        <tr>
 
-    <div id="contenu">
 
-        <h1>Ajoutez une liste de course au compte <?= htmlentities($ID) ?> </h1>
+                                                            <td><?= $NomListesResult[$i]['NomListe'] ?></td>
+                                                            <td><a href='/delete_Courses.php?NomListe=<?= $wishlistname ?>'>
+                                                                    <button class="btn btn-dark" type="button">Supprimer la liste de course</button> </a></td>
+                                                            <?php
+                                                            // var_dump($NomListesResult[$i]['NomListe']);
+                                                            $wishlistname = $NomListesResult[$i]['NomListe'];
+                                                            $ProduitListe = $bdd->prepare("SELECT ID_produit FROM listeproduit WHERE NomListe ='$wishlistname'");
+                                                            $ProduitListe->execute();
+                                                            $ProduitListeResult = $ProduitListe->fetchAll();
+                                                            // var_dump($ProduitListeResult);
+                                                            ?>
 
-        <div class="container">
-            <form method="post" action="">
-                <label>Nom de la nouvelle liste de course</label>
-                <br>
-                <input type="text" name="ID_Liste" />
-                <br><br>
+                                                        </tr>
+                                                    </thead>
 
-                <input type="submit" name="save" value="submit" />
-            </form>
+                                                    <td></td>
+                                                    <td>
+                                                        <?php for ($j = 0; $j < count($ProduitListeResult); $j++) {
+                                                            $IDproduit = $ProduitListeResult[$j]['ID_produit'];
+                                                            echo $data["products"][(int)$j]['product_name'];
+                                                            // var_dump($IDproduit);
+                                                            echo '</br>';
+                                                        }
+                                                        ?>
+                                                    </td>
+                                                    <td><a href='/ConsulterProduit.php?Produit_ID=<?= $i ?>'>
+                                                            <button class="btn btn-dark" type="button">Supprimer 1/+ produits</button> </a< /td>
+                                                            <?php
+                                                            ?>
+                                                            </tr>
+                                                            </br>
+                                                        <?php } ?>
+                                                </div>
+                                        </tbody>
+                                    </table>
+
+
+
+
+
+                                    <footer>
+                                        <?php include('footer.php'); ?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <tbody>
-
-            <?php
-            for ($i = 0; $i < count($NomListesResult); $i++) {
-            ?>
-                <tr>
-
-                    <td><?= $NomListesResult[$i]['NomListe'] ?></td>
-                    <?php
-                    // var_dump($NomListesResult[$i]['NomListe']);
-                    $wishlistname = $NomListesResult[$i]['NomListe'];
-                    $ProduitListe = $bdd->prepare("SELECT ID_produit FROM listeproduit WHERE NomListe ='$wishlistname'");
-                    $ProduitListe->execute();
-                    $ProduitListeResult = $ProduitListe->fetchAll();
-                    // var_dump($ProduitListeResult);
-                    ?>
-                    <?php for ($j = 0; $j < count($ProduitListeResult); $j++) {
-                        $IDproduit = $ProduitListeResult[$j]['ID_produit'];
-                        echo $data["products"][(int)$j]['product_name'];
-                        // var_dump($IDproduit);
-                        echo'</br>';
-                        
-                    }
-                    ?>
-                        <td><a href='/delete.php?NomListe=<?= $wishlistname ?>'>
-                                                        <button class="btn btn-dark" type="button">Supprimer</button> </a></td>
-                                                        <?php
-                    ?>
-
-                    
-                    <!-- <td><a href='/update.php?Utilisateurs_ID=<? //= $tab[$i]['ID_utilisateurs'] 
-                                                                    ?>'>
-                            <button class="btn btn-dark" type="button">Update</button> </td>
-                    <td><a href='/delete.php?Utilisateurs_ID=<? //= $tab[$i]['ID_utilisateurs'] 
-                                                                ?>'>
-                            <button class="btn btn-dark" type="button">Supprimer</button> </td> -->
-                </tr>
-                </br>
-            <?php } ?>
-
-        </tbody>
-
-
-
-
-
-
-        <footer>
-            <?php include('footer.php'); ?>
-
-    </div>
-    </footer>
+        </footer>
 </body>
 
 </html>

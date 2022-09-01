@@ -3,11 +3,11 @@
     
     $ID = $_COOKIE['id_user'];
 $ID_produit = $_GET['Produit_ID'];
-var_dump($ID_produit);
+// var_dump($ID_produit);
     $NomListes = $bdd->prepare("SELECT NomListe FROM wishlist WHERE ID_utilisateurs='$ID'");
     $NomListes->execute();
     $NomListesResult = $NomListes->fetchAll();
-    var_dump($NomListesResult);
+    // var_dump($NomListesResult);
 
     if(isset($_POST['Ajouter'])){
         $NomListe = $_POST['NomListe'];

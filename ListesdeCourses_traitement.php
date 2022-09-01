@@ -16,12 +16,12 @@ $hasWish = $bdd->prepare("SELECT EXISTS(SELECT NomListe FROM wishlist WHERE ID_u
     $queryCount = $bdd->prepare("SELECT COUNT(NomListe) as count FROM wishlist WHERE ID_utilisateurs='$ID'");
     $queryCount->execute();
     $queryCountResult = (int)$queryCount->fetch()['count'];
-var_dump($queryCountResult);
+// var_dump($queryCountResult);
 
     $NomListes = $bdd->prepare("SELECT NomListe FROM wishlist WHERE ID_utilisateurs='$ID'");
     $NomListes->execute();
     $NomListesResult = $NomListes->fetchAll();
-    var_dump($NomListesResult);
+    // var_dump($NomListesResult);
 
 
    }

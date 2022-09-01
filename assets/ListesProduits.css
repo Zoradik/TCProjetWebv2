@@ -33,3 +33,9 @@ body {
     scrollbar-color: rebeccapurple green;
     scrollbar-width: thin;
 }
+footer {
+    background: #ccc;
+    position: absolute;
+    bottom: 0;
+    width: 98.5%;
+}
