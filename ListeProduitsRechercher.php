@@ -1,8 +1,9 @@
-﻿<?php
+<?php
 
 require_once 'config.php';
 require 'vendor/autoload.php';
-require 'class/OpenFoodFactsAllProduct.php';
+require 'class/OpenFoodFactsReasearch.php';
+// require 'Rechercher_produits_traitement.js';
 // $GET = new OpenFoodFactsAllProduct('3017620422003');
 // $forecast = $GET->getForecast('3017620422003');
 
@@ -75,12 +76,12 @@ require 'class/OpenFoodFactsAllProduct.php';
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $count = $data['page_count'];
+                                            $count = $dataRE['page_count'];
                                              for ($i = 0; $i < (int)$count; $i++) { ?>
                                                 <tr>
-                                                    <td><?= $data["products"][$i]['product_name'] ?> </td>
-                                                    <td><?= $data["products"][$i]['brands'] ?></td>
-                                                    <td><?= $data["products"][$i]['categories'] ?></td>
+                                                    <td><?= $dataRE["products"][$i]['product_name'] ?> </td>
+                                                    <td><?= $dataRE["products"][$i]['brands'] ?></td>
+                                                    <td><?= $dataRE["products"][$i]['categories'] ?></td>
                                                     <td><a href='/ConsulterProduit.php?Produit_ID=<?= $i ?>'>
                                                             <button class="btn btn-dark" type="button">Consulter</button> </a></td>
                                                 </tr>
