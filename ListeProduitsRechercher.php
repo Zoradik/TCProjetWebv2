@@ -3,25 +3,7 @@
 require_once 'config.php';
 require 'vendor/autoload.php';
 require 'class/OpenFoodFactsReasearch.php';
-// require 'Rechercher_produits_traitement.js';
-// $GET = new OpenFoodFactsAllProduct('3017620422003');
-// $forecast = $GET->getForecast('3017620422003');
 
-// $pdo = new PDO("mysql:host=MindShop.com;dbname=tcweb;charset=utf8", "root", "", [
-//     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-//     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-// ]);
-
-// $query = "SELECT * FROM listeproduit";
-// $params = [];
-
-// if (!empty($_GET['q'])) {
-//     $query .= " WHERE ID_produit LIKE :nameproduct";
-//     $params['nameproduct'] = '%' . $_GET['q'] . '%';
-// }
-// $statement = $pdo->prepare($query);
-// $statement->execute($params);
-// $products = $statement->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -76,13 +58,13 @@ require 'class/OpenFoodFactsReasearch.php';
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $count = $dataRE['page_count'];
+                                            $count = $dataRE['page_size'];
                                              for ($i = 0; $i < (int)$count; $i++) { ?>
                                                 <tr>
                                                     <td><?= $dataRE["products"][$i]['product_name'] ?> </td>
                                                     <td><?= $dataRE["products"][$i]['brands'] ?></td>
                                                     <td><?= $dataRE["products"][$i]['categories'] ?></td>
-                                                    <td><a href='/ConsulterProduit.php?Produit_ID=<?= $i ?>'>
+                                                    <td><a href='/ConsulterProduit.php?Produit_ID=<?= $dataRE["products"][$i]['product_name'] ?>'>
                                                             <button class="btn btn-dark" type="button">Consulter</button> </a></td>
                                                 </tr>
 
@@ -90,6 +72,10 @@ require 'class/OpenFoodFactsReasearch.php';
                                 </div>
                                 </tbody>
                                 </table>
+                                <?php if ($x >1) :?>
+                                <a href="?p=<?= $x - 1 ?>" class="btn btn-dark">Page précédente </a>
+                                <?php endif ?>
+                                <a href="?p=<?= $x + 1 ?>" class="btn btn-dark">Page suviante </a>
                             </div>
                         </div>
                     </div>

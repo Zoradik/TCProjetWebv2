@@ -11,8 +11,15 @@
 
    // public function getForecast(string $id): ?array
     //{
-        // $x = 0;
-        $curl = curl_init("https://world.openfoodfacts.org/?json=true");
+        if ($x = $_GET['p'] == NULL){
+            $x = 1;
+        }
+        else {
+            $x = $_GET['p'];
+        }
+        $lien = "https://world.openfoodfacts.org/?json=true&page=$x&page_size=10";
+        // var_dump($lien);
+        $curl = curl_init($lien);
         curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_CAINFO         => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'cert.cer',

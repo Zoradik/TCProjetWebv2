@@ -55,6 +55,7 @@ include 'Produit_list_traitement.php';
                                             <thead>
                                                 <select name="NomProduit" method='post'>
                                                     <?php
+                                                    var_dump($NomListesResult);
                                                     for ($i = 0; $i < count($NomListesResult); $i++) {
                                                     ?>
                                                         <tr>

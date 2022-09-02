@@ -1,26 +1,13 @@
 ﻿<?php
+// use App\URLHelper;
 
 require_once 'config.php';
 require 'vendor/autoload.php';
 require 'class/OpenFoodFactsAllProduct.php';
-// $GET = new OpenFoodFactsAllProduct('3017620422003');
-// $forecast = $GET->getForecast('3017620422003');
 
-// $pdo = new PDO("mysql:host=MindShop.com;dbname=tcweb;charset=utf8", "root", "", [
-//     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-//     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-// ]);
+//pagination
+$x = (int)($_GET['p'] ?? 1);
 
-// $query = "SELECT * FROM listeproduit";
-// $params = [];
-
-// if (!empty($_GET['q'])) {
-//     $query .= " WHERE ID_produit LIKE :nameproduct";
-//     $params['nameproduct'] = '%' . $_GET['q'] . '%';
-// }
-// $statement = $pdo->prepare($query);
-// $statement->execute($params);
-// $products = $statement->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -58,11 +45,11 @@ require 'class/OpenFoodFactsAllProduct.php';
                             <div class="Utilisateurs">
                                 <div class="scrollertw">
                                     <h1> Tous les produits</h1>
-                                    <form action="">
+                                    <form action="http://mindshop.com/ListeProduitsRechercher.php?q=&p=1" method="get">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="q" placeholder="Rechercher en produit">
+                                        <input type="text" class="form-control" name="q" placeholder="Rechercher en produit">
                                         </div>
-                                        <button class="btn btn-dark">Rechercher</button>
+                                        <button class="btn btn-dark"  >Rechercher</button>
                                     </form>
                                     <table class="table table-strip">
                                         <thead>
@@ -75,13 +62,13 @@ require 'class/OpenFoodFactsAllProduct.php';
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $count = $data['page_count'];
-                                             for ($i = 0; $i < (int)$count; $i++) { ?>
+                                            $count = $data['page_size'];
+                                             for ($i = 0; $i < (int)($count); $i++){ ?>
                                                 <tr>
                                                     <td><?= $data["products"][$i]['product_name'] ?> </td>
                                                     <td><?= $data["products"][$i]['brands'] ?></td>
                                                     <td><?= $data["products"][$i]['categories'] ?></td>
-                                                    <td><a href='/ConsulterProduit.php?Produit_ID=<?= $i ?>'>
+                                                    <td><a href='/ConsulterProduit.php?Produit_ID=<?= $data["products"][$i]['product_name'] ?>'>
                                                             <button class="btn btn-dark" type="button">Consulter</button> </a></td>
                                                 </tr>
 
@@ -89,6 +76,13 @@ require 'class/OpenFoodFactsAllProduct.php';
                                 </div>
                                 </tbody>
                                 </table>
+                                <?php if ($x >1) :?>
+                                <a href="?p=<?= $x - 1 ?>" class="btn btn-dark">Page précédente </a>
+                                <?php endif ?>
+                                <a href="?p=<?= $x + 1 ?>" class="btn btn-dark">Page suviante </a>
+
+                               
+
                             </div>
                         </div>
                     </div>
