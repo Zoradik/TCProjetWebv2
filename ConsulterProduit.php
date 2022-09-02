@@ -41,14 +41,14 @@ include 'Consulter_traitement.php';
                             <div class="Courses">
                                 <div class="scrollertw">
                                     <br>
-                                    <h1> Ajouter le produit</h1>
+                                    <h1> Ajouter le produit à la liste </h1>
                                     <form method='post'>
                                         <div class="form-group">
                                             <br>
-                                            <input type="submit" class="form-control" name="Ajouter" method='post'>
+                                            <input type="submit" class="form-control" value="Ajouter le produit a la liste" name="Ajouter" method='post'>
                                             <br>
                                             <h2>
-                                                Ajoutez a la liste de course :
+                                                Choisissez la liste de course :
                                             </h2>
                                             <br>
                                             </input>

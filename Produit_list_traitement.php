@@ -16,5 +16,5 @@ $ID_Liste = $_GET['Liste_ID'];
 
     $requete = $bdd->prepare("DELETE FROM listeproduit WHERE ID_produit='" . $NomProduit . "'");
     $requete->execute();
+    header("Location: /ListesdeCourses.php");
     }
-header("Location: /ListesdeCourses.php");

@@ -1,11 +1,14 @@
 <?php 
     require_once 'config.php'; // On inclu la connexion à la bdd
     // Si les variables existent et qu'elles ne sont pas vides
-    
+    $pdo = new PDO("mysql:host=MindShop.com;dbname=tcweb;charset=utf8", "root", "", [
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ]);
     $ID = $_COOKIE['id_user'];
 
 //Vérifie si il y a une wishliste pour le USER connecté
-$hasWish = $bdd->prepare("SELECT EXISTS(SELECT NomListe FROM wishlist WHERE ID_utilisateurs='$ID') AS OUTPUT");
+   $hasWish = $bdd->prepare("SELECT EXISTS(SELECT NomListe FROM wishlist WHERE ID_utilisateurs='$ID') AS OUTPUT");
    $hasWish->execute();
    $hasWishResult = $hasWish->fetch();
 
@@ -23,9 +26,7 @@ $hasWish = $bdd->prepare("SELECT EXISTS(SELECT NomListe FROM wishlist WHERE ID_u
     $NomListesResult = $NomListes->fetchAll();
     // var_dump($NomListesResult);
 
-
    }
-
 
 
 
@@ -37,4 +38,6 @@ $hasWish = $bdd->prepare("SELECT EXISTS(SELECT NomListe FROM wishlist WHERE ID_u
     // var_dump($insert_user);
     // echo"Nom";
      $insert_user->execute();
+     header("Location: /ListesdeCourses.php");
     }
+

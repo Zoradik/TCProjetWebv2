@@ -1,7 +1,12 @@
 <?php
 require_once 'config.php';
-include 'class/OpenFoodFactsAllProduct.php';
+// include 'class/OpenFoodFactsAllProduct.php';
 include 'ListesdeCourses_traitement.php';
+//toutes les variables
+$pdo = new PDO("mysql:host=MindShop.com;dbname=tcweb;charset=utf8", "root", "", [
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+]);
 $ID = null;
 
 if (!empty($_COOKIE['id_user'])) {
@@ -19,6 +24,7 @@ $query = "SELECT * FROM listeproduit";
 if (!empty($_GET['q'])){
     $query .= "WHERE ";
 }
+
 ?>
 
 <!doctype html>
@@ -64,11 +70,18 @@ if (!empty($_GET['q'])){
                                         <form method="post" action="">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Nom de la liste de course " name="ID_Liste">
-                                                <br>
                                             </div>
                                             <button class="btn btn-dark" type="submit" name="save" value="submit">Ajouter la nouvelle liste</button>
                                         </form>
                                     </div>
+                                    <br>
+                                    <form action="">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="q" placeholder="Rechercher le produit a partir d'une liste de course" value="<?= htmlentities($_GET['q'] ?? null) //htmlentities pour echapper aux injections
+                                                                                                                                    ?>">
+                                    </div>
+                                    <button class="btn btn-dark">Rechercher</button>
+                                </form>
                                     </form>
                                     <table class="table table-strip">
                                         <thead>
@@ -92,6 +105,7 @@ if (!empty($_GET['q'])){
                                                             $ProduitListe->execute();
                                                             $ProduitListeResult = $ProduitListe->fetchAll();
                                                             // var_dump($ProduitListeResult);
+                                                            
                                                             ?>
 
                                                             <td><?= $NomListesResult[$i]['NomListe'] ?></td>
@@ -106,7 +120,7 @@ if (!empty($_GET['q'])){
                                                     <td>
                                                         <?php for ($j = 0; $j < count($ProduitListeResult); $j++) {
                                                             $IDproduit = $ProduitListeResult[$j]['ID_produit'];
-                                                            echo $data["products"][(int)$j]['product_name'];
+                                                            echo $IDproduit;
                                                             // var_dump($IDproduit);
                                                             echo '</br>';
                                                         }

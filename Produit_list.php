@@ -41,21 +41,21 @@ include 'Produit_list_traitement.php';
                             <div class="Courses">
                                 <div class="scrollertw">
                                     <br>
-                                    <h1> Ajouter le produit</h1>
+                                    <h1> Supprimer le produit de la liste de course :</h1>
                                     <form method='post'>
                                         <div class="form-group">
                                             <br>
-                                            <input type="submit" class="form-control" name="Delete" method='post'>
+                                            <input type="submit" class="form-control" name="Delete" value="Supprimer" method='post'>
                                             <br>
                                             <h2>
-                                                Ajoutez a la liste de course :
+                                                Choisissez le produit que vous souhaitez supprimer  :
                                             </h2>
                                             <br>
                                             </input>
                                             <thead>
                                                 <select name="NomProduit" method='post'>
                                                     <?php
-                                                    var_dump($NomListesResult);
+                                                    // var_dump($NomListesResult);
                                                     for ($i = 0; $i < count($NomListesResult); $i++) {
                                                     ?>
                                                         <tr>
