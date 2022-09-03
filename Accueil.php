@@ -17,9 +17,10 @@ require_once 'config.php';
     <link rel="stylesheet" href="./assets/vendors/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="./assets/nav&footer.css" class="css">
     <link rel="stylesheet" href="./assets/Acceuil.css" class="css">
-    <!-- <meta name="viewport"
-           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+
+    <link rel="manifest" href="/manifest.json"/>
+
+    
 
     <link rel="stylesheet" href="C:/Users/jerem/source/repos/TCProjetWebv2/Acceuil.css" class="css">
 
@@ -32,8 +33,12 @@ require_once 'config.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
-
+    <script>
+            if('serviceWorker' in navigator){ navigator.serviceWorker.register('serviceWorker.js')
+            .then( (sw) => console.log('Le Service Worker a été enregistrer', sw))
+            .catch((err) => console.log('Le Service Worker est introuvable !!!', err));
+            }
+        </script>
 </head>
 
 <?php include('nav.php'); ?>
@@ -55,7 +60,7 @@ require_once 'config.php';
                 <div class="row">
                     <div class=".col-xl-">
                         <div class="onestlabis">
-                            <div class="twitter">
+                            <div class="oui">
                                 <div class="container">
                                     <div class="container">
                                         <h1>BIENVENUE DANS MINDSHOP</h1>

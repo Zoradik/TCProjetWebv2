@@ -1,0 +1,19 @@
+{
+    "name": "MindShop",
+    "lang" : "fr",
+    "short_name": "MSP",
+    "start_url": "Accueil.php",
+    "display": "standalone",
+    "icons": [
+        {
+            "src" : "/Logo/LogoMindShop512px.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src" : "/Logo/LogoMindShop192px.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ]
+}
