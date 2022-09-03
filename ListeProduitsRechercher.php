@@ -1,12 +1,8 @@
-﻿<?php
-// use App\URLHelper;
+<?php
 
 require_once 'config.php';
 require 'vendor/autoload.php';
-require 'class/OpenFoodFactsAllProduct.php';
-
-//pagination
-$x = (int)($_GET['p'] ?? 1);
+require 'class/OpenFoodFactsReasearch.php';
 
 ?>
 
@@ -45,11 +41,11 @@ $x = (int)($_GET['p'] ?? 1);
                             <div class="Utilisateurs">
                                 <div class="scrollertw">
                                     <h1> Tous les produits</h1>
-                                    <form action="http://mindshop.com/ListeProduitsRechercher.php?q=&p=1" method="get">
+                                    <form action="">
                                         <div class="form-group">
-                                        <input type="text" class="form-control" name="q" placeholder="Rechercher en produit">
+                                            <input type="text" class="form-control" name="q" placeholder="Rechercher en produit">
                                         </div>
-                                        <button class="btn btn-dark"  >Rechercher</button>
+                                        <button class="btn btn-dark">Rechercher</button>
                                     </form>
                                     <table class="table table-strip">
                                         <thead>
@@ -62,13 +58,13 @@ $x = (int)($_GET['p'] ?? 1);
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $count = $data['page_size'];
-                                             for ($i = 0; $i < (int)($count); $i++){ ?>
+                                            $count = $dataRE['page_size'];
+                                             for ($i = 0; $i < (int)$count; $i++) { ?>
                                                 <tr>
-                                                    <td><?= $data["products"][$i]['product_name'] ?> </td>
-                                                    <td><?= $data["products"][$i]['brands'] ?></td>
-                                                    <td><?= $data["products"][$i]['categories'] ?></td>
-                                                    <td><a href='/ConsulterProduit.php?Produit_ID=<?= $data["products"][$i]['product_name'] ?>'>
+                                                    <td><?= $dataRE["products"][$i]['product_name'] ?> </td>
+                                                    <td><?= $dataRE["products"][$i]['brands'] ?></td>
+                                                    <td><?= $dataRE["products"][$i]['categories'] ?></td>
+                                                    <td><a href='/ConsulterProduit.php?Produit_ID=<?= $dataRE["products"][$i]['product_name'] ?>'>
                                                             <button class="btn btn-dark" type="button">Consulter</button> </a></td>
                                                 </tr>
 
@@ -80,9 +76,6 @@ $x = (int)($_GET['p'] ?? 1);
                                 <a href="?p=<?= $x - 1 ?>" class="btn btn-dark">Page précédente </a>
                                 <?php endif ?>
                                 <a href="?p=<?= $x + 1 ?>" class="btn btn-dark">Page suviante </a>
-
-                               
-
                             </div>
                         </div>
                     </div>

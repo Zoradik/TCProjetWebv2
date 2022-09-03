@@ -11,13 +11,16 @@
 
    // public function getForecast(string $id): ?array
     //{
-        if ($x = $_GET['p'] == NULL){
+
+        if ($x = 1){
             $x = 1;
         }
         else {
             $x = $_GET['p'];
         }
-        $lien = "https://world.openfoodfacts.org/?json=true&page=$x&page_size=10";
+        $motcle = $_GET['q'];
+        
+        $lien = "https://world.openfoodfacts.org/cgi/search.pl?action=process&tagtype_0=brands&tag_contains_0=contains&tag_0='$motcle'&sort_by=unique_scans_n&page_size=10&page='$x'&sort_by=unique_scans_n&json=true";
         // var_dump($lien);
         $curl = curl_init($lien);
         curl_setopt_array($curl, [
@@ -30,7 +33,7 @@
             return null;
         }
         $results = [];
-        $data = json_decode($data, true);
+        $dataRE = json_decode($data, true);
         // var_dump($data );
         // foreach ($data['products'] as $products) {
             

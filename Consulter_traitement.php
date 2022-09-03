@@ -17,5 +17,6 @@ $ID_produit = $_GET['Produit_ID'];
     // var_dump($insert_user);
     // echo"Nom";
      $insert_user->execute();
+     header("Location: /ListesdeProduit.php?p=1");
     }
     ?>
