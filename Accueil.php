@@ -25,9 +25,12 @@ require_once 'config.php';
 
     <link Rel="Stylesheet" href="Https://Stackpath.Bootstrapcdn.Com/Bootstrap/4.3.1/Css/Bootstrap.Min.Css">
     <link Rel="Stylesheet" href="Https://Cdnjs.Cloudflare.Com/Ajax/Libs/Font-Awesome/5.9.0/Css/All.Css">
+    
 
     <script src="./assets/vendors/jquery/jquery-3.6.0.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
 
@@ -53,50 +56,63 @@ require_once 'config.php';
                     <div class=".col-xl-">
                         <div class="onestlabis">
                             <div class="twitter">
-                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                    <!-- Indicators -->
-                                    <ol class="carousel-indicators">
-                                        <li data-target="Carousel3" data-slide-to="0" class="active"></li>
-                                        <li data-target="Carousel2" data-slide-to="1"></li>
-                                        <li data-target="Carousel1" data-slide-to="2"></li>
-                                    </ol>
+                                <div class="container">
+                                    <div class="container">
+                                        <h1>BIENVENUE DANS MINDSHOP</h1>
+                                        <h5>Have you forgot your shopping list with us ?</h5>
+                                        <div id="demo" class="carousel slide" data-ride="carousel">
+                                            <!-- Indicateurs -->
+                                            <ul class="carousel-indicators">
+                                                <li data-target="#Logo/Carousel2.jpg" data-slide-to="0" class="active"></li>
+                                                <li data-target="#Logo/Carousel3.png" data-slide-to="1"></li>
+                                                <li data-target="#Logo/Carousel1.jpg" data-slide-to="2"></li>
+                                            </ul>
 
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <img src="Logo/Carousel3.png" alt="...">
-                                        </div>
+                                            <!-- Carrousel -->
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="Logo/Carousel1.jpg" alt="Carrousel slide 1" class="d-block w-100">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <br>
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="Logo/Carousel2.jpg" alt="Carrousel slide 2" class="d-block w-100">
+                                                    <div class="carousel-caption d-none d-md-block text-dark">
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="Logo/Carousel3.png" alt="Carrousel slide 3" class="d-block w-100">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                            </div>
 
-                                        <div class="item">
-                                            <img src="Logo/Carousel2.jpg" alt="...">
-                                        </div>
-
-                                        <div class="item">
-                                            <img src="Logo/Carousel1.png" alt="...">
+                                            <!-- Contrôles -->
+                                            <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Précédent</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Suivant</span>
+                                            </a>
                                         </div>
                                     </div>
-
-                                    <!-- Left and right controls -->
-                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                        <span class="glyphicon glyphicon-chevron-left"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                        <span class="glyphicon glyphicon-chevron-right"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
             </div>
 
-
-
         </div>
-
-    </div>
     </div>
     </div>
 
