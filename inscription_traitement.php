@@ -14,7 +14,7 @@
         $email = htmlspecialchars($_POST['email']);
         $ville = htmlspecialchars($_POST['ville']);
         //$role = htmlspecialchars($_POST['role']);
-        $role = htmlspecialchars('STD');
+        $role = htmlspecialchars('oui');
         $password = htmlspecialchars($_POST['password']);
         $password_retype = htmlspecialchars($_POST['password_retype']);
 
@@ -34,12 +34,12 @@
          
 
       // On vérifie si l'utilisateur existe
-       $check = $bdd->prepare('SELECT Nom, Prenom, ID_utilisateurs, email, Ville, Mot_de_passe, Role FROM utilisateurs WHERE ID_utilisateurs =  ?');
+       $check = $bdd->prepare('SELECT Nom, Prenom, ID_utilisateurs, email, Ville, Mot_de_passe, Role FROM utilisateurs WHERE ID_utilisateur =  ?');
        $check->execute(array($ID_user));
        $data = $check->fetch();
        $row = $check->rowCount();
 
-       $email = strtolower($email); // on transforme toute les lettres majuscule en minuscule pour éviter que Foo@gmail.com et foo@gmail.com soient deux compte différents ..
+       $email = strtolower($email); // on transforme toute les lettres majuscule en minuscule pour �viter que Foo@gmail.com et foo@gmail.com soient deux compte diff�rents ..
         
        // Si la requete renvoie un 0 alors l'utilisateur n'existe pas 
        if($row == 0){ 

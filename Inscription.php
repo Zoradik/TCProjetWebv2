@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/inscription.css" class="css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://vicopo.selfbuild.fr/vicopo-jquery.js"></script>
-
+    
 </head>
 
 <body>
@@ -117,19 +117,19 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-md-4">
-                                    <label for="validationCustom04">Adresse</label>
+
                                         <div>
                                             <input class="form-control" id="code" placeholder="Code postal">
-                                            <input class="form-control" id="ville" placeholder="Ville" name="ville">
+                                            <input class="form-control" id="ville" placeholder="Ville" name ="ville">
                                         </div>
                                         <li data-vicopo="#ville, #code" data-vicopo-click='{"#code": "code","#ville": "ville"}'>
                                             <span data-vicopo-ville></span>
                                             <strong data-vicopo-code-postal></strong>
                                         </li>
 
-
+                                        
                                         <div class="invalid-feedback">
-                                            Merci d'indiquer votre Rôle.
+                                            Merci d'indiquer votre R�le.
                                         </div>
                                     </div>
 

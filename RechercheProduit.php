@@ -13,7 +13,6 @@ require 'Nav.php'
     <ul>
 
         <li> <?= $forecast['Nom'] ?> </li>
-        <li>La marque du produit est : <?= $forecast['Marque'] ?> </li>
         <li><?= $forecast['Description'] ?></li>
         <li> <?= $forecast['image'] ?> </li>
 

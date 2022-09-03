@@ -1,6 +1,5 @@
 <?php 
-    session_start(); // Démarrage de la session
-    $_SESSION['role'] = 'ADM' ;
+    session_start(); // D�marrage de la session
     require_once 'config.php'; // On inclut la connexion à la base de données
 
     if(isset($_POST['email'])  && isset($_POST['password'])) // Si il existe les champs email, password et qu'il sont pas vident
