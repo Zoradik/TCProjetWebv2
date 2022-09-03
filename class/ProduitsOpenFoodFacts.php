@@ -28,6 +28,7 @@ class OpenFoodFacts
             $results =
                 [
                     'Nom' => $data["product"]['brands_imported'],
+                    'Marque' => $data["product"]["brands"],
                     'Description' =>  $data["product"]['categories'],
                     'image' => $data["product"]['image_front_small_url']
                 ];
