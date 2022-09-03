@@ -139,7 +139,7 @@ include 'update_traitement.php';
                                             <div class="form-group col-md-8">
                                                 <label for="validationCustom11">Quel est votre rôle?</label>
                                                 <select id="choixCategorie" name="role" class="form-select" id="validationCustom11" required>
-                                                    <option selected disabled value=""><?= $role ?></option>
+                                                    <option selected disabled value="">....</option>
                                                     <option value="STD">STD</option>
                                                     <option value="ADM">ADM</option>
                                                 </select>
