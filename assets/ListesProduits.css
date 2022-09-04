@@ -39,3 +39,17 @@ footer {
     bottom: 0;
     width: 98.5%;
 }
+
+
+@media screen and (max-width: 1600px) {
+    .Utilisateurs {
+        width: 100.5%;
+    }
+
+    .SousUtilisateurs {
+        width: 100%;
+    }
+    .scrollertw {
+        width: 100%;
+    }
+}

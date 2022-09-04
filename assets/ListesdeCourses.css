@@ -39,3 +39,16 @@ footer {
     bottom: 0;
     width: 98.8%;
 }
+
+@media screen and (max-width: 1600px) {
+    .Courses {
+        width: 100.5%;
+    }
+
+    .SousCourses {
+        width: 100%;
+    }
+    .scrollertw {
+        width: 100%;
+    }
+}

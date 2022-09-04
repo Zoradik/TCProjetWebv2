@@ -112,6 +112,7 @@ $pages = ceil($count / PER_PAGE); //ceil toujours valeur supérieur a la virgule
                     <div class=".col-xl-">
                         <div class="SousUtilisateurs">
                             <div class="Utilisateurs">
+                            <div class="resp">
                                 <h1> Tous les utilisateurs</h1>
                                 <form action="">
                                     <div class="form-group">
@@ -157,6 +158,7 @@ $pages = ceil($count / PER_PAGE); //ceil toujours valeur supérieur a la virgule
                                 <?php if ($pages > 1 && $page < $pages) : ?>
                                     <a href="?<?= URLHelper::withParam($_GET, "p", $page + 1) ?>" class="btn btn-dark"> Page Suivante </a>
                                 <?php endif ?>
+                            </div>
                             </div>
                         </div>
                     </div>

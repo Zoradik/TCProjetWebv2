@@ -38,7 +38,6 @@ $x = (int)($_GET['p'] ?? 1);
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6">
                 <div class="row">
                     <div class=".col-xl-">
                         <div class="SousUtilisateurs">
@@ -84,7 +83,6 @@ $x = (int)($_GET['p'] ?? 1);
                                
 
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -18,13 +18,20 @@ if (!empty($_POST['id_user'])) {
     $ID = $_POST['id_user'];
 }
 
-
+$params = [];
 $query = "SELECT * FROM listeproduit";
 
-if (!empty($_GET['q'])){
-    $query .= "WHERE ";
+if (!empty($_GET['q'])) {
+    $query .= " WHERE ID_produit LIKE :ID_produit ";
+    $params['ID_produit'] = '%' . $_GET['q'] . '%';
 }
-
+$statement = $pdo->prepare($query);
+$statement->bindParam(":ID_produit", $params['ID_produit']);
+$statement->execute();
+$statement->fetchAll();
+// var_dump($query);
+var_dump($params);
+// var_dump($statement);
 ?>
 
 <!doctype html>
@@ -58,12 +65,11 @@ if (!empty($_GET['q'])){
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6">
-                <div class="row">
-                    <div class=".col-xl-">
-                        <div class="SousCourses">
-                            <div class="Courses">
-                                <div class="scrollertw">
+            <div class="row">
+                <div class=".col-xl-">
+                    <div class="SousCourses">
+                        <div class="Courses">
+                            <div class="scrollertw">
                                 <div id="contenu">
                                     <h1> Ajoutez une liste de course au compte <?= htmlentities($ID) ?></h1>
                                     <div class="container">
@@ -76,12 +82,12 @@ if (!empty($_GET['q'])){
                                     </div>
                                     <br>
                                     <form action="">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="q" placeholder="Rechercher le produit a partir d'une liste de course" value="<?= htmlentities($_GET['q'] ?? null) //htmlentities pour echapper aux injections
-                                                                                                                                    ?>">
-                                    </div>
-                                    <button class="btn btn-dark">Rechercher</button>
-                                </form>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="q" placeholder="Rechercher le produit a partir d'une liste de course" value="<?= htmlentities($_GET['q'] ?? null) //htmlentities pour echapper aux injections
+                                                                                                                                                                        ?>">
+                                        </div>
+                                        <button class="btn btn-dark">Rechercher</button>
+                                    </form>
                                     </form>
                                     <table class="table table-strip">
                                         <thead>
@@ -98,20 +104,20 @@ if (!empty($_GET['q'])){
                                                 <div table class="table table-strip">
                                                     <thead>
                                                         <tr>
-                                                        <?php
+                                                            <?php
                                                             // var_dump($NomListesResult[$i]['NomListe']);
                                                             $wishlistname = $NomListesResult[$i]['NomListe'];
                                                             $ProduitListe = $bdd->prepare("SELECT ID_produit FROM listeproduit WHERE NomListe ='$wishlistname'");
                                                             $ProduitListe->execute();
                                                             $ProduitListeResult = $ProduitListe->fetchAll();
                                                             // var_dump($ProduitListeResult);
-                                                            
+
                                                             ?>
 
                                                             <td><?= $NomListesResult[$i]['NomListe'] ?></td>
                                                             <td><a href='/delete_Courses.php?Name_list=<?= $wishlistname ?>'>
                                                                     <button class="btn btn-dark" type="button">Supprimer la liste de course</button> </a></td>
-                                                            
+
 
                                                         </tr>
                                                     </thead>
@@ -128,11 +134,11 @@ if (!empty($_GET['q'])){
                                                     </td>
                                                     <td><a href='/Produit_list.php?Liste_ID=<?= $wishlistname ?>'>
                                                             <button class="btn btn-dark" type="button">Supprimer 1/+ produits</button> </a> </td>
-                                                            <?php
-                                                            ?>
-                                                            </tr>
-                                                            </br>
-                                                        <?php } ?>
+                                                    <?php
+                                                    ?>
+                                                    </tr>
+                                                    </br>
+                                                <?php } ?>
                                                 </div>
                                         </tbody>
                                     </table>
@@ -143,13 +149,13 @@ if (!empty($_GET['q'])){
 
                                     <footer>
                                         <?php include('footer.php'); ?>
-                                        </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
         </footer>
 </body>
