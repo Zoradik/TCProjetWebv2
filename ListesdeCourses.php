@@ -19,7 +19,7 @@ if (!empty($_POST['id_user'])) {
 }
 // var_dump($ID);
 $params = [];
-$query = "SELECT * FROM listeproduit RIGHT JOIN wishlist w ON w.NomListe = listeproduit.NomListe WHERE w.ID_utilisateurs = :ID";
+$query = "SELECT  * FROM listeproduit RIGHT JOIN wishlist w ON w.NomListe = listeproduit.NomListe WHERE w.ID_utilisateurs = :ID Group By w.NomListe";
 
 if (!empty($_GET['q'])) {
     $query .= " AND listeproduit.ID_produit LIKE :ID_produit ";

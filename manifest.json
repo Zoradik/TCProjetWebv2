@@ -2,7 +2,8 @@
     "name": "MindShop",
     "lang" : "fr",
     "short_name": "MSP",
-    "start_url": "Accueil.php",
+    "start_url": "/",
+    "scope": ".",
     "display": "standalone",
     "icons": [
         {
