@@ -112,6 +112,7 @@ $pages = ceil($count / PER_PAGE); //ceil toujours valeur supérieur a la virgule
                     <div class=".col-xl-">
                         <div class="SousUtilisateurs">
                             <div class="Utilisateurs">
+                            <div class="resp">
                                 <h1> Tous les utilisateurs</h1>
                                 <form action="">
                                     <div class="form-group">
@@ -123,12 +124,12 @@ $pages = ceil($count / PER_PAGE); //ceil toujours valeur supérieur a la virgule
                                 <table class="table table-strip">
                                     <thead>
                                         <tr>
-                                            <th><?= TableHelper::sort('ID_utilisateurs', 'ID_utilisateurs', $_GET) ?></th>
-                                            <th><?= TableHelper::sort('Nom', 'Nom', $_GET) ?></th>
-                                            <th><?= TableHelper::sort('Prenom', 'Prenom', $_GET) ?></th>
-                                            <th><?= TableHelper::sort('email', 'email', $_GET) ?></th>
-                                            <th><?= TableHelper::sort('ville', 'ville', $_GET) ?></th>
-                                            <th><?= TableHelper::sort('Role', 'Role', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('ID', 'ID_utilisateurs', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('name', 'Nom', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('prenom', 'Prenom', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('Email', 'email', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('ville', 'Ville', $_GET) ?></th>
+                                            <th><?= TableHelper::sort('role', 'Role', $_GET) ?></th>
                                             <th>>Actions</th>
                                         </tr>
                                     </thead>
@@ -157,6 +158,7 @@ $pages = ceil($count / PER_PAGE); //ceil toujours valeur supérieur a la virgule
                                 <?php if ($pages > 1 && $page < $pages) : ?>
                                     <a href="?<?= URLHelper::withParam($_GET, "p", $page + 1) ?>" class="btn btn-dark"> Page Suivante </a>
                                 <?php endif ?>
+                            </div>
                             </div>
                         </div>
                     </div>

@@ -82,12 +82,12 @@ include 'update_traitement.php';
                     <div class="col-6 slogan">
                         <fieldset class="form1">
                             <legend><b>Modification du profil choisi</b></legend>
-                            <form class="needs-validation" method="post" >
+                            <form class="needs-validation" method="post">
 
                                 <div class="row">
 
                                     <div class="col-md-4 mb-3">
-                                        <label for="validationCustom01" class="label">Nom  </label>
+                                        <label for="validationCustom01" class="label">Nom </label>
                                         <input type="text" value=<?= $nom ?> name="nom" class="form-control" id="validationCustom01" placeholder="NOM" required>
                                         <div class="invalid-feedback">
                                             Merci d'indiquer votre NOM.
@@ -96,7 +96,7 @@ include 'update_traitement.php';
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="validationCustom02">Pr&eacutenom</label>
-                                        <input type="text" value=<?= $prenom ?>  name="prenom" class="form-control" id="validationCustom02" placeholder="Prénom" required>
+                                        <input type="text" value=<?= $prenom ?> name="prenom" class="form-control" id="validationCustom02" placeholder="Prénom" required>
                                         <div class="invalid-feedback">
                                             Merci d'indiquer votre prenom.
                                         </div>
@@ -107,7 +107,7 @@ include 'update_traitement.php';
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <label for="validationCustom04">Identifiant</label>
-                                        <input type="text" value="<?= $User_id ?>"  name="ID_user" class="form-control" id="validationCustom04" placeholder="Identifiant" required>
+                                        <input type="text" value="<?= $User_id ?>" name="ID_user" class="form-control" id="validationCustom04" placeholder="Identifiant" required>
                                         <div class="invalid-feedback">
                                             Merci d'indiquer votre Identifiant.
                                         </div>
@@ -127,7 +127,7 @@ include 'update_traitement.php';
                                         <div>
                                             <label for="validationCustom04">Adresse</label>
                                             <input class="form-control" id="code" placeholder="Code postal">
-                                            <input class="form-control"value=<?= $ville ?> id="ville" placeholder="Ville" name="ville">
+                                            <input class="form-control" value=<?= $ville ?> id="ville" placeholder="Ville" name="ville">
                                         </div>
                                         <li data-vicopo="#ville, #code" data-vicopo-click='{"#code": "code","#ville": "ville"}'>
                                             <span data-vicopo-ville></span>
@@ -139,9 +139,9 @@ include 'update_traitement.php';
                                             <div class="form-group col-md-8">
                                                 <label for="validationCustom11">Quel est votre rôle?</label>
                                                 <select id="choixCategorie" name="role" class="form-select" id="validationCustom11" required>
-                                                    <option selected disabled value=""><?= $role ?></option>
-                                                    <option value="Standard">STD</option>
-                                                    <option value="Admin">ADM</option>
+                                                    <option selected disabled value="">....</option>
+                                                    <option value="STD">STD</option>
+                                                    <option value="ADM">ADM</option>
                                                 </select>
                                                 <div class="invalid-feedback">
                                                     Merci d'indiquer votre Rôle.
