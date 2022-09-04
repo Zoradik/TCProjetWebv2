@@ -19,14 +19,17 @@ if (!empty($_POST['id_user'])) {
 }
 // var_dump($ID);
 $params = [];
-$query = "SELECT * FROM listeproduit RIGHT JOIN wishlist w ON w.NomListe = listeproduit.NomListe WHERE w.ID_utilisateurs = :ID";
+$query = "SELECT  * FROM listeproduit RIGHT JOIN wishlist w ON w.NomListe = listeproduit.NomListe WHERE w.ID_utilisateurs = :ID GROUP BY w.NomListe";
+$queryR = "SELECT  * FROM listeproduit RIGHT JOIN wishlist w ON w.NomListe = listeproduit.NomListe WHERE w.ID_utilisateurs = :ID";
+$statement = $pdo->prepare($query);
 
 if (!empty($_GET['q'])) {
-    $query .= " AND listeproduit.ID_produit LIKE :ID_produit ";
+    $queryR .= " AND listeproduit.ID_produit LIKE :ID_produit ";
     $params['ID_produit'] = '%' . $_GET['q'] . '%';
+    $statement = $pdo->prepare($queryR);
 }
 
-$statement = $pdo->prepare($query);
+// $statement = $pdo->prepare($queryR);
 // var_dump($pdo->errorInfo());
 if (!empty($_GET['q'])) {
     $statement->bindParam(":ID_produit", $params['ID_produit']);

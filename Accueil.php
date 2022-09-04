@@ -19,6 +19,7 @@ require_once 'config.php';
     <link rel="stylesheet" href="./assets/Acceuil.css" class="css">
 
     <link rel="manifest" href="/manifest.json" />
+    <link rel="serviceworker" href="/service-worker.js" />
 
 
 
@@ -35,9 +36,15 @@ require_once 'config.php';
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('serviceWorker.js')
-                .then((sw) => console.log('Le Service Worker a été enregistrer', sw))
-                .catch((err) => console.log('Le Service Worker est introuvable !!!', err));
+            window;addEventListener('load' , () =>{
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(reg=>{
+                    console.log('Service worker registred');
+                })
+                .catch(err=>{
+                    console.log('Le Service Worker est introuvable', err);
+                }); 
+            });
         }
     </script>
 </head>
