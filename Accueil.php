@@ -19,6 +19,7 @@ require_once 'config.php';
     <link rel="stylesheet" href="./assets/Acceuil.css" class="css">
 
     <link rel="manifest" href="/manifest.json" />
+    <link rel="serviceworker" href="/service-worker.js" />
 
 
 
