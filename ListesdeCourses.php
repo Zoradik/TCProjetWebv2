@@ -17,21 +17,26 @@ if (!empty($_POST['id_user'])) {
     setcookie('id_user', $_POST['id_user']);
     $ID = $_POST['id_user'];
 }
-
+// var_dump($ID);
 $params = [];
-$query = "SELECT * FROM listeproduit";
+$query = "SELECT * FROM listeproduit LEFT JOIN wishlist w ON w.NomListe = listeproduit.NomListe WHERE w.ID_utilisateurs = :ID";
 
 if (!empty($_GET['q'])) {
-    $query .= " WHERE ID_produit LIKE :ID_produit ";
+    $query .= " AND listeproduit.ID_produit LIKE :ID_produit ";
     $params['ID_produit'] = '%' . $_GET['q'] . '%';
 }
+
 $statement = $pdo->prepare($query);
-$statement->bindParam(":ID_produit", $params['ID_produit']);
+if (!empty($_GET['q'])) {
+    $statement->bindParam(":ID_produit", $params['ID_produit']);
+    }
+$statement->bindParam(":ID", $ID);
 $statement->execute();
-$statement->fetchAll();
 // var_dump($query);
-var_dump($params);
+// var_dump($params);
 // var_dump($statement);
+$NomListesResult = $statement->fetchAll();
+// var_dump($result);
 ?>
 
 <!doctype html>
