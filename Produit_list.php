@@ -34,7 +34,6 @@ include 'Produit_list_traitement.php';
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6">
                 <div class="row">
                     <div class=".col-xl-">
                         <div class="SousCourses">
@@ -76,7 +75,6 @@ include 'Produit_list_traitement.php';
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>

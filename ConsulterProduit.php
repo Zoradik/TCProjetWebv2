@@ -34,44 +34,42 @@ include 'Consulter_traitement.php';
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6">
-                <div class="row">
-                    <div class=".col-xl-">
-                        <div class="SousCourses">
-                            <div class="Courses">
-                                <div class="scrollertw">
-                                    <br>
-                                    <h1> Ajouter le produit à la liste </h1>
-                                    <form method='post'>
-                                        <div class="form-group">
-                                            <br>
-                                            <input type="submit" class="form-control" value="Ajouter le produit a la liste" name="Ajouter" method='post'>
-                                            <br>
-                                            <h2>
-                                                Choisissez la liste de course :
-                                            </h2>
-                                            <br>
-                                            </input>
-                                            <thead>
-                                                <select name="NomListe" method='post'>
-                                                    <?php
-                                                    for ($i = 0; $i < count($NomListesResult); $i++) {
-                                                    ?>
-                                                        <tr>
-                                                            <td><?= $NomListesResult[$i]['NomListe'] ?></td>
-                                                            <option value="<?= $NomListesResult[$i]['NomListe'] ?>"><?= $NomListesResult[$i]['NomListe'] ?></option>
+            <div class="row">
+                <div class=".col-xl-">
+                    <div class="SousCourses">
+                        <div class="Courses">
+                            <div class="scrollertw">
+                                <br>
+                                <h1> Ajouter le produit à la liste </h1>
+                                <form method='post'>
+                                    <div class="form-group">
+                                        <br>
+                                        <input type="submit" class="form-control" value="Ajouter le produit a la liste" name="Ajouter" method='post'>
+                                        <br>
+                                        <h2>
+                                            Choisissez la liste de course :
+                                        </h2>
+                                        <br>
+                                        </input>
+                                        <thead>
+                                            <select name="NomListe" method='post'>
+                                                <?php
+                                                for ($i = 0; $i < count($NomListesResult); $i++) {
+                                                ?>
+                                                    <tr>
+                                                        <td><?= $NomListesResult[$i]['NomListe'] ?></td>
+                                                        <option value="<?= $NomListesResult[$i]['NomListe'] ?>"><?= $NomListesResult[$i]['NomListe'] ?></option>
 
-                                                        </tr>
-                                                        </br>
-                                                    <?php } ?>
+                                                    </tr>
+                                                    </br>
+                                                <?php } ?>
 
-                                                </select>
-                                            </thead>
-                                        </div>
-                                    </form>
-                                    <?php include('footer.php'); ?>
+                                            </select>
+                                        </thead>
+                                    </div>
+                                </form>
+                                <?php include('footer.php'); ?>
 
-                                </div>
                             </div>
                         </div>
                     </div>

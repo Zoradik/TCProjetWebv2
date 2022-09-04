@@ -1,7 +1,7 @@
 .padding-0 {
     padding-right: 0;
     padding-left: 0;
-  
+
 }
 
 body {
@@ -9,7 +9,7 @@ body {
 }
 
 
-.Utilisateurs{
+.Utilisateurs {
     width: 1880px;
     border: 4px solid black;
     margin-left: -4px;
@@ -27,7 +27,7 @@ body {
 }
 
 .separation1 {
-    width: 990px ;;
+    width: 990px;
     background-color: rgb(164, 156, 156);
 }
 
@@ -40,6 +40,7 @@ body {
     .SousUtilisateurs {
         width: 100%;
     }
+
     .resp {
         width: 100%;
     }
