@@ -78,4 +78,3 @@
                }else header('Location: inscription.php?reg_err=email_length');
        }else header('Location: inscription.php?reg_err=already');
  }
- ?>

@@ -7,13 +7,13 @@ $ville = null;
 
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     unset($_COOKIE['id_user']);
-    setcookie('nom', '', time() - 10 );
-    setcookie('prenom', '', time() - 10 );
-    setcookie('id_user', '', time() - 10 );
-    setcookie('email', '', time() - 10 );
-    setcookie('ville', '', time() - 10 );
-    setcookie('role', '', time() - 10 );
-    setcookie('PHPSESSID', '', time() - 10 );
+    setcookie('nom', '', time() - 10);
+    setcookie('prenom', '', time() - 10);
+    setcookie('id_user', '', time() - 10);
+    setcookie('email', '', time() - 10);
+    setcookie('ville', '', time() - 10);
+    setcookie('role', '', time() - 10);
+    setcookie('PHPSESSID', '', time() - 10);
 }
 
 
@@ -126,8 +126,8 @@ if (!empty($_POST['id_user'])) {
                                         <label class="text-dark font-weight-bold" for="inputUsername">Adresse email</label>
                                         <section class="profil">
                                             <div class="card-text">
-                                            <?php if ($email) : ?>
-                                                <div class="text-center"><?= htmlentities($email) ?></div>
+                                                <?php if ($email) : ?>
+                                                    <div class="text-center"><?= htmlentities($email) ?></div>
                                                 <?php endif; ?>
                                             </div>
                                         </section>
@@ -145,8 +145,8 @@ if (!empty($_POST['id_user'])) {
                                         <label class="text-dark font-weight-bold" for="inputLocation">Ville</label>
                                         <section class="profil">
                                             <div class="card-text">
-                                            <?php if ($ville) : ?>
-                                                <div class="text-center"><?= htmlentities($ville) ?></div>
+                                                <?php if ($ville) : ?>
+                                                    <div class="text-center"><?= htmlentities($ville) ?></div>
                                                 <?php endif; ?>
                                             </div>
                                         </section>
@@ -155,8 +155,8 @@ if (!empty($_POST['id_user'])) {
                                         <label class="text-dark font-weight-bold" for="inputLocation">Identifiant</label>
                                         <section class="profil">
                                             <div class="card-text">
-                                            <?php if ($ID) : ?>
-                                                <div class="text-center"><?= htmlentities($ID) ?></div>
+                                                <?php if ($ID) : ?>
+                                                    <div class="text-center"><?= htmlentities($ID) ?></div>
                                                 <?php endif; ?>
                                             </div>
                                         </section>

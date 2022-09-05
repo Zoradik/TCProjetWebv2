@@ -33,7 +33,7 @@ if (!empty($_GET['q'])) {
 // var_dump($pdo->errorInfo());
 if (!empty($_GET['q'])) {
     $statement->bindParam(":ID_produit", $params['ID_produit']);
-    }
+}
 $statement->bindParam(":ID", $ID);
 $statement->execute();
 // var_dump($query);

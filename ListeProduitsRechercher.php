@@ -59,7 +59,7 @@ require 'class/OpenFoodFactsReasearch.php';
                                         <tbody>
                                             <?php
                                             $count = $dataRE['page_size'];
-                                             for ($i = 0; $i < (int)$count; $i++) { ?>
+                                            for ($i = 0; $i < (int)$count; $i++) { ?>
                                                 <tr>
                                                     <td><?= $dataRE["products"][$i]['product_name'] ?> </td>
                                                     <td><?= $dataRE["products"][$i]['brands'] ?></td>
@@ -72,8 +72,8 @@ require 'class/OpenFoodFactsReasearch.php';
                                 </div>
                                 </tbody>
                                 </table>
-                                <?php if ($x >1) :?>
-                                <a href="?p=<?= $x - 1 ?>" class="btn btn-dark">Page précédente </a>
+                                <?php if ($x > 1) : ?>
+                                    <a href="?p=<?= $x - 1 ?>" class="btn btn-dark">Page précédente </a>
                                 <?php endif ?>
                                 <a href="?p=<?= $x + 1 ?>" class="btn btn-dark">Page suviante </a>
                             </div>

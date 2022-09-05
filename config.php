@@ -1,5 +1,5 @@
-<?php 
-        /*
+<?php
+/*
            Attention ! le host => l'adresse de la base de données et non du site !!
         
            Pour ceux qui doivent spécifier le port ex : 
@@ -8,13 +8,8 @@
          */
 
 
-    try 
-    {
-        $bdd = new PDO("mysql:host=MindShop.com;dbname=tcweb;charset=utf8", "root", "");
-
-   
-    }
-    catch(PDOException $e)
-    {
-        die('Erreur : '.$e->getMessage());
-    }
+try {
+    $bdd = new PDO("mysql:host=MindShop.com;dbname=tcweb;charset=utf8", "root", "");
+} catch (PDOException $e) {
+    die('Erreur : ' . $e->getMessage());
+}

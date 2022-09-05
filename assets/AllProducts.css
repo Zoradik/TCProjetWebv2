@@ -1,7 +1,7 @@
 .padding-0 {
     padding-right: 0;
     padding-left: 0;
-  
+
 }
 
 body {
@@ -9,7 +9,7 @@ body {
 }
 
 
-.Top{
+.Top {
     width: 1880px;
     border: 4px solid black;
     margin-left: -4px;
@@ -27,6 +27,7 @@ body {
 }
 
 .separation1 {
-    width: 990px ;;
+    width: 990px;
+    ;
     background-color: red;
 }

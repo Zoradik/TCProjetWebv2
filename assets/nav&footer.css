@@ -21,17 +21,17 @@
 .navicon {
     padding: 1%;
     color: rgb(64, 77, 79);
-    filter: drop-shadow(0 0 1px rgb(53,55,69));
+    filter: drop-shadow(0 0 1px rgb(53, 55, 69));
 }
 
-    .navicon:hover {
-        border-top-style: none;
-        border-right-style: none;
-        border-left-style: none;
-        border-bottom-style: 5px;
-        border-bottom-style: solid;
-        border-color: rgb(64, 77, 79);
-    }
+.navicon:hover {
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: 5px;
+    border-bottom-style: solid;
+    border-color: rgb(64, 77, 79);
+}
 
 .style-button {
     border-top-style: none;
@@ -46,14 +46,14 @@
     background-color: #a2c4c9;
 }
 
-    .style-button:hover {
-        border-top-style: none;
-        border-right-style: none;
-        border-left-style: none;
-        border-bottom-style: 5px;
-        border-bottom-style: solid;
-        border-color: rgb(5, 145, 82);
-    }
+.style-button:hover {
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: 5px;
+    border-bottom-style: solid;
+    border-color: rgb(5, 145, 82);
+}
 
 .copyright {
     color: rgb(174, 145, 82);
@@ -80,7 +80,8 @@
 }
 
 
-body, html {
+body,
+html {
     height: 100%;
 }
 

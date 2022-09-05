@@ -38,51 +38,51 @@ $x = (int)($_GET['p'] ?? 1);
 <body>
     <div class="container-fluid">
         <div class="row">
-                <div class="row">
-                    <div class=".col-xl-">
-                        <div class="SousUtilisateurs">
-                            <div class="Utilisateurs">
-                                <div class="scrollertw">
-                                    <h1> Tous les produits</h1>
-                                    <form action="http://mindshop.com/ListeProduitsRechercher.php?q=&p=1" method="get">
-                                        <div class="form-group">
+            <div class="row">
+                <div class=".col-xl-">
+                    <div class="SousUtilisateurs">
+                        <div class="Utilisateurs">
+                            <div class="scrollertw">
+                                <h1> Tous les produits</h1>
+                                <form action="http://mindshop.com/ListeProduitsRechercher.php?q=&p=1" method="get">
+                                    <div class="form-group">
                                         <input type="text" class="form-control" name="q" placeholder="Rechercher en produit">
-                                        </div>
-                                        <button class="btn btn-dark"  >Rechercher</button>
-                                    </form>
-                                    <table class="table table-strip">
-                                        <thead>
+                                    </div>
+                                    <button class="btn btn-dark">Rechercher</button>
+                                </form>
+                                <table class="table table-strip">
+                                    <thead>
+                                        <tr>
+                                            <th>Nom du produit</th>
+                                            <th>Marque du produit</th>
+                                            <th>Description du produit</th>
+                                            <th>>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $count = $data['page_size'];
+                                        for ($i = 0; $i < (int)($count); $i++) { ?>
                                             <tr>
-                                                <th>Nom du produit</th>
-                                                <th>Marque du produit</th>
-                                                <th>Description du produit</th>
-                                                <th>>Action</th>
+                                                <td><?= $data["products"][$i]['product_name'] ?> </td>
+                                                <td><?= $data["products"][$i]['brands'] ?></td>
+                                                <td><?= $data["products"][$i]['categories'] ?></td>
+                                                <td><a href='/ConsulterProduit.php?Produit_ID=<?= $data["products"][$i]['product_name'] ?>'>
+                                                        <button class="btn btn-dark" type="button">Consulter</button> </a></td>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $count = $data['page_size'];
-                                             for ($i = 0; $i < (int)($count); $i++){ ?>
-                                                <tr>
-                                                    <td><?= $data["products"][$i]['product_name'] ?> </td>
-                                                    <td><?= $data["products"][$i]['brands'] ?></td>
-                                                    <td><?= $data["products"][$i]['categories'] ?></td>
-                                                    <td><a href='/ConsulterProduit.php?Produit_ID=<?= $data["products"][$i]['product_name'] ?>'>
-                                                            <button class="btn btn-dark" type="button">Consulter</button> </a></td>
-                                                </tr>
 
-                                            <?php } ?>
-                                </div>
-                                </tbody>
-                                </table>
-                                <?php if ($x >1) :?>
-                                <a href="?p=<?= $x - 1 ?>" class="btn btn-dark">Page précédente </a>
-                                <?php endif ?>
-                                <a href="?p=<?= $x + 1 ?>" class="btn btn-dark">Page suviante </a>
-
-                               
-
+                                        <?php } ?>
                             </div>
+                            </tbody>
+                            </table>
+                            <?php if ($x > 1) : ?>
+                                <a href="?p=<?= $x - 1 ?>" class="btn btn-dark">Page précédente </a>
+                            <?php endif ?>
+                            <a href="?p=<?= $x + 1 ?>" class="btn btn-dark">Page suviante </a>
+
+
+
+                        </div>
                     </div>
                 </div>
             </div>

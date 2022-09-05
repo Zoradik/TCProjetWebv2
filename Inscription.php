@@ -117,7 +117,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-md-4">
-                                    <label for="validationCustom04">Adresse</label>
+                                        <label for="validationCustom04">Adresse</label>
                                         <div>
                                             <input class="form-control" id="code" placeholder="Code postal">
                                             <input class="form-control" id="ville" placeholder="Ville" name="ville">
